@@ -29,7 +29,26 @@ document.addEventListener("DOMContentLoaded", () => {
         imgElements.forEach(el => {
             if (menuImages[id]) {
                 el.src = menuImages[id];
+                // Добавляем возможность клика
+                el.style.cursor = "zoom-in";
+                el.onclick = function() {
+                    openPhoto(this.src);
+                };
             }
         });
     }
 });
+
+// Функции для открытия и закрытия
+function openPhoto(src) {
+    const overlay = document.getElementById('photo-overlay');
+    const fullImg = document.getElementById('full-photo');
+    fullImg.src = src;
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // Запрещаем прокрутку меню под фото
+}
+
+function closePhoto() {
+    document.getElementById('photo-overlay').style.display = 'none';
+    document.body.style.overflow = 'auto'; // Возвращаем прокрутку
+}
