@@ -3,77 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MURPH MENU</title>
+    <title>MURPH MENU (Apple Style)</title>
     <style>
         :root {
-            --bg: #ffffff;
-            --text: #1a1a1a;
-            --muted: #757575;
-            --accent: #000000;
-            --section-bg: #f9f9f9;
+            /* Палитра в стиле Apple */
+            --apple-white: #ffffff;
+            --apple-black: #1d1d1f;
+            --apple-gray: #f5f5f7;
+            --apple-muted: #86868b;
+            --apple-blue: #0071e3;
+            --font-family: -apple-system, system-ui, sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         body {
-            font-family: -apple-system, system-ui, sans-serif;
+            font-family: var(--font-family);
             margin: 0; padding: 0;
-            background: var(--bg);
-            color: var(--text);
+            background: var(--apple-white);
+            color: var(--apple-black);
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Шапка MURPH */
         header {
-            padding: 40px 20px 20px;
+            padding: 25px 0;
             text-align: center;
-            border-bottom: 1px solid #eee;
+        }
+        h1 {
+            font-size: 24px; letter-spacing: 4px;
+            margin: 0; text-transform: uppercase;
+            color: var(--apple-black);
         }
 
-        h1 { font-size: 28px; letter-spacing: 3px; margin: 0; text-transform: uppercase; }
-
-        .nav-container {
+        /* 1-й Уровень: Главная навигация (Apple-style top-nav) */
+        .main-nav-container {
             position: sticky; top: 0;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid #eee;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(20px);
+            z-index: 2000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
-
         .main-nav {
-            display: flex; justify-content: center; gap: 30px; padding: 15px 0;
+            display: flex; justify-content: center; gap: 40px; padding: 12px 0;
+        }
+        .main-nav-btn {
+            background: none; border: none; font-weight: 400; font-size: 14px;
+            text-transform: capitalize; color: var(--apple-black); cursor: pointer;
+            padding: 5px 0; position: relative;
+        }
+        .main-nav-btn::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 0;
+            height: 2px; background: var(--apple-black); transition: var(--transition);
+        }
+        .main-nav-btn.active::after { width: 100%; }
+
+        /* 2-й Уровень: Категории (как подменю на apple.com) */
+        .sub-nav-container {
+            position: sticky; top: 48px; /* Выше подложки */
+            background: var(--apple-gray);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            z-index: 1000;
+            display: none; /* Скрыто по умолчанию */
+        }
+        .sub-nav-container.active { display: block; }
+
+        .sub-nav {
+            display: flex; overflow-x: auto;
+            white-space: nowrap; padding: 10px 15px;
+            gap: 10px; -webkit-overflow-scrolling: touch;
+        }
+        .sub-nav::-webkit-scrollbar { display: none; } /* Прячем скролл */
+
+        .sub-nav-btn {
+            background: #fff; border: 1px solid rgba(0,0,0,0.1);
+            padding: 8px 18px; border-radius: 20px;
+            font-size: 13px; font-weight: 500; color: var(--apple-muted);
+            cursor: pointer; transition: var(--transition);
+        }
+        .sub-nav-btn.active {
+            background: var(--apple-black); color: #fff; border-color: var(--apple-black);
         }
 
-        .nav-btn {
-            background: none; border: none; font-weight: 600; font-size: 14px;
-            text-transform: uppercase; color: var(--muted); cursor: pointer;
+        /* Контент меню */
+        .menu-view { display: none; padding-bottom: 80px; }
+        .menu-view.active { display: block; }
+
+        .category-section {
+            padding: 40px 15px 10px; scroll-margin-top: 100px; /* Для плавной прокрутки */
+        }
+        .category-header {
+            font-size: 17px; font-weight: 600; text-transform: uppercase;
+            margin-bottom: 25px; letter-spacing: 1px; color: var(--apple-muted);
         }
 
-        .nav-btn.active { color: var(--text); border-bottom: 2px solid var(--text); }
-
-        .menu-page { display: none; padding: 20px 15px 80px; }
-        .menu-page.active { display: block; }
-
-        .category { margin-top: 40px; }
-        .category:first-child { margin-top: 10px; }
-        .category-title { 
-            font-size: 16px; font-weight: 700; text-transform: uppercase; 
-            margin-bottom: 20px; letter-spacing: 1px; color: var(--accent);
+        /* Карточка блюда в стиле Apple (место под фото слева) */
+        .item {
+            display: grid; grid-template-columns: 80px 1fr; gap: 15px;
+            margin-bottom: 25px; align-items: start;
+        }
+        
+        .item-photo-placeholder {
+            width: 80px; height: 80px;
+            background: var(--apple-gray);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 10px; color: #ccc;
+            overflow: hidden; /* Фото не вылезет */
+        }
+        .item-photo-placeholder img {
+            width: 100%; height: 100%; object-fit: cover;
+            display: block;
         }
 
-        .item { display: flex; justify-content: space-between; margin-bottom: 22px; align-items: flex-start; }
-        .item-info { flex: 1; padding-right: 15px; }
-        .item-name { font-size: 15px; font-weight: 500; margin: 0; line-height: 1.3; }
-        .item-desc { font-size: 13px; color: var(--muted); margin: 4px 0 0; line-height: 1.4; }
-        .item-price { font-size: 15px; font-weight: 600; white-space: nowrap; }
-        .vol { font-size: 11px; color: var(--muted); font-weight: 400; margin-left: 5px; }
+        .item-content { flex: 1; display: flex; flex-direction: column; }
+        .item-meta { display: flex; justify-content: space-between; align-items: start; gap: 10px; }
+        .item-name { font-size: 15px; font-weight: 500; margin: 0; line-height: 1.3; color: var(--apple-black); }
+        .item-price { font-size: 16px; font-weight: 600; white-space: nowrap; color: var(--apple-black); }
+        .item-desc { font-size: 13px; color: var(--apple-muted); margin: 6px 0 0; line-height: 1.4; }
+        .vol { font-size: 11px; font-weight: 400; color: var(--apple-muted); margin-left: 5px; }
 
+        /* Конструктор (грид) */
         .constructor-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-            background: var(--section-bg); padding: 15px; border-radius: 8px;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px;
+            background: var(--apple-gray); padding: 20px; border-radius: 16px;
         }
-        .const-item { font-size: 13px; display: flex; justify-content: space-between; }
+        .const-item { font-size: 13px; display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid rgba(0,0,0,0.03); }
+        .const-item:last-child { border-bottom: none; }
 
         footer {
-            padding: 40px 20px; text-align: center; background: var(--section-bg);
-            font-size: 12px; color: var(--muted); line-height: 1.6;
+            padding: 60px 20px; text-align: center; background: var(--apple-gray);
+            font-size: 12px; color: var(--apple-muted); line-height: 1.8;
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
     </style>
 </head>
@@ -83,160 +143,178 @@
     <h1>MURPH</h1>
 </header>
 
-<div class="nav-container">
+<div class="main-nav-container">
     <div class="main-nav">
-        <button class="nav-btn active" onclick="show('food', this)">Food</button>
-        <button class="nav-btn" onclick="show('drinks', this)">Drinks</button>
+        <button id="btn-food" class="main-nav-btn active" onclick="switchMainView('food')">Еда</button>
+        <button id="btn-drinks" class="main-nav-btn" onclick="switchMainView('drinks')">Напитки</button>
     </div>
 </div>
 
-<div id="food" class="menu-page active">
+<div id="sub-nav-food" class="sub-nav-container active">
+    <div class="sub-nav">
+        <button class="sub-nav-btn active" onclick="scrollToCategory('breakfast')">Завтраки</button>
+        <button class="sub-nav-btn" onclick="scrollToCategory('salads')">Салаты</button>
+        <button class="sub-nav-btn" onclick="scrollToCategory('pasta')">Пасты / Горячее</button>
+        <button class="sub-nav-btn" onclick="scrollToCategory('soups')">Супы</button>
+        <button class="sub-nav-btn" onclick="scrollToCategory('snacks')">Закуски</button>
+        <button class="sub-nav-btn" onclick="scrollToCategory('sweets')">Сладкое</button>
+        <button class="sub-nav-btn" onclick="scrollToCategory('constructor')">Конструктор</button>
+    </div>
+</div>
+
+<div id="sub-nav-drinks" class="sub-nav-container">
+    <div class="sub-nav">
+        <button class="sub-nav-btn active" onclick="scrollToCategory('coffee-classic')">Кофе (Классика)</button>
+        <button class="sub-nav-btn" onclick="scrollToCategory('coffee-special')">Кофе (Special)</button>
+        <button class="sub-nav-btn" onclick="scrollToCategory('tea')">Чай</button>
+        <button class="sub-nav-btn" onclick="scrollToCategory('matcha')">Матча</button>
+        <button class="sub-nav-btn" onclick="scrollToCategory('others')">Другое</button>
+    </div>
+</div>
+
+<div id="view-food" class="menu-view active">
     
-    <div class="category">
-        <div class="category-title">Завтраки (весь день)</div>
+    <section id="breakfast" class="category-section">
+        <div class="category-header">ЗАВТРАКИ (весь день)</div>
+        
         <div class="item">
-            <div class="item-info">
-                <p class="item-name">Зелёная гречка, горошек, пармезан</p>
+            <div class="item-photo-placeholder">[фото]</div>
+            <div class="item-content">
+                <div class="item-meta">
+                    <p class="item-name">Зелёная гречка, горошек, пармезан</p>
+                    <p class="item-price">490</p>
+                </div>
             </div>
-            <div class="item-price">490</div>
         </div>
+        
         <div class="item">
-            <div class="item-info">
-                <p class="item-name">Пряная шакшука</p>
-                <p class="item-desc">Копчёная фета, яйца пашот, кинза</p>
+            <div class="item-photo-placeholder">[фото]</div>
+            <div class="item-content">
+                <div class="item-meta">
+                    <p class="item-name">Пряная шакшука, копчёная фета, яйца пашот, кинза</p>
+                    <p class="item-price">690</p>
+                </div>
             </div>
-            <div class="item-price">690</div>
         </div>
-        <div class="item">
-            <div class="item-info">
-                <p class="item-name">Сырники</p>
-                <p class="item-desc">Мисо карамель, сметана, попкорн из гречки</p>
-            </div>
-            <div class="item-price">690</div>
-        </div>
-        <div class="item">
-            <div class="item-info">
-                <p class="item-name">Тост бриошь, пашот, лосось</p>
-                <p class="item-desc">Крем фета с зеленью, микс трав</p>
-            </div>
-            <div class="item-price">950</div>
-        </div>
-    </div>
 
-    <div class="category">
-        <div class="category-title">Салаты</div>
-        <div class="item">
-            <div class="item-info"><p class="item-name">Зелёный салат авокадо</p></div>
-            <div class="item-price">690</div>
-        </div>
-        <div class="item">
-            <div class="item-info"><p class="item-name">Боул - креветки, киноа</p></div>
-            <div class="item-price">890</div>
-        </div>
-    </div>
+        </section>
 
-    <div class="category">
-        <div class="category-title">Пасты / Горячее</div>
+    <section id="salads" class="category-section">
+        <div class="category-header">САЛАТЫ</div>
         <div class="item">
-            <div class="item-info"><p class="item-name">Лазанья с уткой</p></div>
-            <div class="item-price">899</div>
+            <div class="item-photo-placeholder">[фото]</div>
+            <div class="item-content">
+                <div class="item-meta">
+                    <p class="item-name">Зелёный салат авокадо, микс трав, огурцы, зелёный горошек, цитрусовая заправка</p>
+                    <p class="item-price">690</p>
+                </div>
+            </div>
         </div>
-        <div class="item">
-            <div class="item-info"><p class="item-name">Бифштекс из мраморной говядины</p>
-            <p class="item-desc">Картофельный крем, перечный соус</p></div>
-            <div class="item-price">990</div>
-        </div>
-    </div>
+        </section>
 
-    <div class="category">
-        <div class="category-title">Конструктор завтраков</div>
+    <section id="constructor" class="category-section">
+        <div class="category-header">КОНСТРУКТОР ЗАВТРАКОВ</div>
         <div class="constructor-grid">
             <div class="const-item"><span>Лосось</span> <span>400</span></div>
-            <div class="const-item"><span>Яйцо</span> <span>400</span></div>
+            <div class="const-item"><span>Яйцо (Пашот/Скрембл)</span> <span>400</span></div>
             <div class="const-item"><span>Мортаделла</span> <span>400</span></div>
             <div class="const-item"><span>Авокадо</span> <span>250</span></div>
+            <div class="const-item"><span>Сладкие томаты</span> <span>250</span></div>
             <div class="const-item"><span>Хлеб</span> <span>200</span></div>
             <div class="const-item"><span>Страчателла</span> <span>350</span></div>
+            <div class="const-item"><span>Икра баклажана</span> <span>350</span></div>
         </div>
-    </div>
-
-    <div class="category">
-        <div class="category-title">Сладкое</div>
-        <div class="item">
-            <div class="item-info"><p class="item-name">Тирамису</p></div>
-            <div class="item-price">590</div>
-        </div>
-        <div class="item">
-            <div class="item-info"><p class="item-name">Песочный чизкейк, матча</p></div>
-            <div class="item-price">490</div>
-        </div>
-    </div>
+    </section>
 </div>
 
-<div id="drinks" class="menu-page">
-    <div class="category">
-        <div class="category-title">Классика</div>
+<div id="view-drinks" class="menu-view">
+    
+    <section id="coffee-classic" class="category-section">
+        <div class="category-header">КЛАССИКА (Кофе)</div>
+        
         <div class="item">
-            <div class="item-info"><p class="item-name">Фильтр Кофе <span class="vol">200 / 300 мл</span></p></div>
-            <div class="item-price">270 / 310</div>
+            <div class="item-photo-placeholder">[фото]</div>
+            <div class="item-content">
+                <div class="item-meta">
+                    <p class="item-name">Фильтр Кофе <span class="vol">200 / 300 мл</span></p>
+                    <p class="item-price">270 / 310</p>
+                </div>
+            </div>
         </div>
+        
         <div class="item">
-            <div class="item-info"><p class="item-name">Капучино <span class="vol">200 / 300 мл</span></p></div>
-            <div class="item-price">350 / 420</div>
+            <div class="item-photo-placeholder">[фото]</div>
+            <div class="item-content">
+                <div class="item-meta">
+                    <p class="item-name">Капучино <span class="vol">200 / 300 мл</span></p>
+                    <p class="item-price">350 / 420</p>
+                </div>
+            </div>
         </div>
-        <div class="item">
-            <div class="item-info"><p class="item-name">Раф Классический <span class="vol">300 мл</span></p></div>
-            <div class="item-price">530</div>
-        </div>
-    </div>
+        
+        </section>
 
-    <div class="category">
-        <div class="category-title">Special</div>
+    <section id="coffee-special" class="category-section">
+        <div class="category-header">SPECIAL</div>
+        
         <div class="item">
-            <div class="item-info"><p class="item-name">Айс-Латте Тирамису <span class="vol">400 мл</span></p></div>
-            <div class="item-price">500</div>
+            <div class="item-photo-placeholder">[фото]</div>
+            <div class="item-content">
+                <div class="item-meta">
+                    <p class="item-name">Гранатовый Бамбл <span class="vol">400 мл</span></p>
+                    <p class="item-price">460</p>
+                </div>
+            </div>
         </div>
+        
         <div class="item">
-            <div class="item-info"><p class="item-name">Гранатовый Бамбл <span class="vol">400 мл</span></p></div>
-            <div class="item-price">460</div>
+            <div class="item-photo-placeholder">[фото]</div>
+            <div class="item-content">
+                <div class="item-meta">
+                    <p class="item-name">Айс-Латте Тирамису <span class="vol">400 мл</span></p>
+                    <p class="item-price">500</p>
+                </div>
+            </div>
         </div>
-    </div>
+        </section>
 
-    <div class="category">
-        <div class="category-title">Чай <span class="vol">500 мл</span></div>
-        <div class="item">
-            <div class="item-info"><p class="item-name">Те Гуань Инь / Пуэр / Габа</p></div>
-            <div class="item-price">450</div>
-        </div>
-        <div class="item">
-            <div class="item-info"><p class="item-name">Яблоко-Бузина</p></div>
-            <div class="item-price">550</div>
-        </div>
     </div>
-
-    <div class="category">
-        <div class="category-title">Доп. опции</div>
-        <div class="constructor-grid">
-            <div class="const-item"><span>Альт. молоко</span> <span>+90</span></div>
-            <div class="const-item"><span>Доп. шот</span> <span>+120</span></div>
-            <div class="const-item"><span>Сироп</span> <span>+60</span></div>
-        </div>
-    </div>
-</div>
 
 <footer>
-    <p>*Все молочные напитки по умолчанию готовим на безлактозном молоке [cite: 37]</p>
-    <p>Если у Вас аллергия, пожалуйста, предупредите официанта [cite: 38, 39]</p>
-    <p>murph.coffee</p>
+    <p>*Все молочные напитки готовим на безлактозном молоке.</p>
+    <p>Если у Вас аллергия, предупредите официанта.</p>
+    <p>murph.coffee | Все цены в рублях.</p>
 </footer>
 
 <script>
-    function show(id, btn) {
-        document.querySelectorAll('.menu-page').forEach(p => p.classList.remove('active'));
-        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
-        btn.classList.add('active');
-        window.scrollTo(0,0);
+    // 1. Переключение между ЕДОЙ и НАПИТКАМИ
+    function switchMainView(viewType) {
+        // Убираем active у всех
+        document.querySelectorAll('.menu-view').forEach(v => v.classList.remove('active'));
+        document.querySelectorAll('.sub-nav-container').forEach(v => v.classList.remove('active'));
+        document.querySelectorAll('.main-nav-btn').forEach(b => b.classList.remove('active'));
+        
+        // Включаем нужные
+        document.getElementById('view-' + viewType).classList.add('active');
+        document.getElementById('sub-nav-' + viewType).classList.add('active');
+        event.currentTarget.classList.add('active');
+        window.scrollTo(0,0); // Наверх при переключении
+    }
+
+    // 2. Плавная прокрутка до категории
+    function scrollToCategory(categoryId) {
+        // Убираем active у кнопок sub-nav
+        const currentSubNav = event.currentTarget.closest('.sub-nav');
+        currentSubNav.querySelectorAll('.sub-nav-btn').forEach(b => b.classList.remove('active'));
+        
+        // Делаем активной
+        event.currentTarget.classList.add('active');
+        
+        // Скроллим
+        const section = document.getElementById(categoryId);
+        if(section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 </script>
 
