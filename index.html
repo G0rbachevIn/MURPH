@@ -80,6 +80,18 @@
         <div class="item"><div class="item-photo"><img data-img="bifshteks" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Бифштекс, картофельный крем, перечный соус</p><span class="item-price">990</span></div></div></div>
     </section>
 
+    <section id="soups" class="category-section">
+        <div class="category-header">Супы</div>
+        <div class="item"><div class="item-photo"><img data-img="soup_tomato" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Томатный суп, креветка, вонголе</p><span class="item-price">650</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="soup_chicken" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Куриный бульон, цыплёнок гриль, лапша</p><span class="item-price">650</span></div></div></div>
+    </section>
+
+    <section id="snacks" class="category-section">
+        <div class="category-header">Закуски</div>
+        <div class="item"><div class="item-photo"><img data-img="fries" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Картофель фри, грибное мороженое, пармезан</p><span class="item-price">650</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="tartar" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Тар-тар из говядины, трюфель, мусс пармезан</p><span class="item-price">990</span></div></div></div>
+    </section>
+
     <section id="sweets" class="category-section">
         <div class="category-header">Сладкое</div>
         <div class="item"><div class="item-photo"><img data-img="shu" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Шу с заварным кремом</p><span class="item-price">450</span></div></div></div>
@@ -90,13 +102,11 @@
 
     <section id="constructor" class="category-section">
         <div class="category-header">Допы</div>
-        <div class="extras-grid">
-            <div class="extra-item"><span>Лосось</span> <span>400</span></div>
-            <div class="extra-item"><span>Яйцо / Мортаделла</span> <span>400</span></div>
-            <div class="extra-item"><span>Страчателла / Хумус</span> <span>350</span></div>
-            <div class="extra-item"><span>Икра баклажана / Дзадзики</span> <span>350</span></div>
-            <div class="extra-item"><span>Жареные креветки</span> <span>300</span></div>
-            <div class="extra-item"><span>Авокадо / Томаты</span> <span>250</span></div>
+        <div class="extras-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 14px;">
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #f0f0f0; padding: 5px 0;"><span>Лосось</span> <span>400</span></div>
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #f0f0f0; padding: 5px 0;"><span>Яйцо / Мортаделла</span> <span>400</span></div>
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #f0f0f0; padding: 5px 0;"><span>Страчателла / Хумус</span> <span>350</span></div>
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #f0f0f0; padding: 5px 0;"><span>Икра баклажана</span> <span>350</span></div>
         </div>
     </section>
 </div>
@@ -104,16 +114,7 @@
 <div id="view-drinks" class="menu-view">
     <section id="coffee" class="category-section">
         <div class="category-header">Кофе</div>
-        <div class="item"><div class="item-photo"><img data-img="espresso" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Двойной Эспрессо <span class="vol">40 мл</span></p><span class="item-price">290</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="capuchino" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Капучино <span class="vol">200/300 мл</span></p><span class="item-price">350/420</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="latte" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Латте <span class="vol">300 мл</span></p><span class="item-price">380</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="bumble" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Бамбл <span class="vol">400 мл</span></p><span class="item-price">690</span></div></div></div>
-    </section>
-
-    <section id="tea" class="category-section">
-        <div class="category-header">Чай (500 мл)</div>
-        <div class="item"><div class="item-photo"><img data-img="tea_puer" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Пуэр / Габа / Те Гуань Инь</p><span class="item-price">450</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="tea_berry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Шиповник-Роза / Облепиховый</p><span class="item-price">550</span></div></div></div>
     </section>
 </div>
 
@@ -138,14 +139,13 @@
     }
     function go(id) {
         const section = document.getElementById(id);
-        if (section) {
-            window.scrollTo({ top: section.offsetTop - 120, behavior: 'smooth' });
-            // Закрываем активные кнопки в доп.навигации и подсвечиваем нужную
-            const container = event.currentTarget.closest('.sub-nav');
-            if(container) {
-                container.querySelectorAll('.sub-nav-btn').forEach(b => b.classList.remove('active'));
-                event.currentTarget.classList.add('active');
-            }
+        if (section) window.scrollTo({ top: section.offsetTop - 120, behavior: 'smooth' });
+        
+        // Подсветка кнопок подменю
+        const container = event.currentTarget.closest('.sub-nav');
+        if(container) {
+            container.querySelectorAll('.sub-nav-btn').forEach(b => b.classList.remove('active'));
+            event.currentTarget.classList.add('active');
         }
     }
 </script>
