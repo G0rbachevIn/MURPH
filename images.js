@@ -19,8 +19,8 @@ const menuImages = {
 
     // ПИЦЦА
     "pepperoni": "Pepperoni1.jpg", 
-    "pizza_pear": "",
-    "pizza_proshutto": "",
+    "pizza_pear": "pizza_pear.jpg",
+    "pizza_proshutto": "pizza_proshutto.jpg",
 
     // ГОРЯЧЕЕ
     "chicken_grill": "",
