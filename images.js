@@ -13,23 +13,23 @@ const menuImages = {
 
     // ПИЦЦА
     "pepperoni": "Pepperoni1.jpg", 
-    "pizza_pear": "pizza_pear.jpg",
-    "pizza_proshutto": "pizza_proshutto.jpg",
+    "pizza_pear": "pear.jpg",
+    "pizza_proshutto": "proshutto.jpg",
 
-    // НАПИТКИ
+    // НАПИТКИ (примеры)
     "espresso": "espresso.jpg",
-    "filter": "filter.jpg",
-    "capuchino": "capuchino.jpg"
-    
-    // И так далее для всех блюд...
+    "capuchino": "capuchino.jpg",
+    "bumble": "bumble.jpg"
 };
 
-// Функция, которая сама расставит фото по местам
-window.onload = function() {
+// Автоматическая подстановка фото при загрузке страницы
+document.addEventListener("DOMContentLoaded", () => {
     for (let id in menuImages) {
         const imgElements = document.querySelectorAll(`[data-img="${id}"]`);
         imgElements.forEach(el => {
-            el.src = menuImages[id];
+            if (menuImages[id]) {
+                el.src = menuImages[id];
+            }
         });
     }
-};
+});
