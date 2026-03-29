@@ -48,30 +48,45 @@ const menuImages = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    for (let id in menuImages) {
-        const imgElements = document.querySelectorAll(`[data-img="${id}"]`);
-        imgElements.forEach(el => {
-            if (menuImages[id]) {
-                el.src = menuImages[id];
-                el.onclick = function() { openPhoto(this.src); };
-            } else {
-                el.parentElement.innerHTML = '<span style="color:#ccc; font-size:10px;">[фото]</span>';
-                el.parentElement.style.display = "flex";
-                el.parentElement.style.alignItems = "center";
-                el.parentElement.style.justifyContent = "center";
-            }
-        });
-    }
+    // Находим все картинки с атрибутом data-img
+    const images = document.querySelectorAll('img[data-img]');
+    
+    images.forEach(img => {
+        const id = img.getAttribute('data-img');
+        const filename = menuImages[id];
+        const parent = img.parentElement;
+
+        if (filename && filename.trim() !== "") {
+            // Если фото есть
+            img.src = filename;
+            img.style.display = "block";
+            img.onclick = function() { openPhoto(this.src); };
+        } else {
+            // Если фото пустое, убираем тег img и ставим текст
+            img.style.display = "none";
+            parent.style.display = "flex";
+            parent.style.alignItems = "center";
+            parent.style.justifyContent = "center";
+            parent.style.background = "#f5f5f7";
+            parent.innerHTML = '<span style="color:#ccc; font-size:10px; text-transform:uppercase; letter-spacing:1px;">[фото]</span>';
+        }
+    });
 });
 
 function openPhoto(src) {
     const overlay = document.getElementById('photo-overlay');
-    document.getElementById('full-photo').src = src;
-    overlay.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
+    const fullPhoto = document.getElementById('full-photo');
+    if (overlay && fullPhoto) {
+        fullPhoto.src = src;
+        overlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
 }
 
 function closePhoto() {
-    document.getElementById('photo-overlay').style.display = 'none';
-    document.body.style.overflow = 'auto';
+    const overlay = document.getElementById('photo-overlay');
+    if (overlay) {
+        overlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
 }
