@@ -51,7 +51,7 @@ h1 { font-size: 26px; letter-spacing: 4px; text-transform: uppercase; margin: 0;
     border-bottom: 2px solid var(--apple-black); 
 }
 
-/* ФИКС КАТЕГОРИЙ (Завтраки, Салаты и т.д.) */
+/* ФИКС КАТЕГОРИЙ */
 .sub-nav-container { 
     position: sticky; 
     top: 48px; 
@@ -61,31 +61,22 @@ h1 { font-size: 26px; letter-spacing: 4px; text-transform: uppercase; margin: 0;
     padding: 12px 0; 
 }
 
-.sub-nav-container.active { 
-    display: block; 
-}
+.sub-nav-container.active { display: block; }
 
 .sub-nav { 
     display: flex; 
     overflow-x: auto; 
     gap: 10px; 
     padding: 0 20px; 
-    scrollbar-width: none; /* Скрываем скроллбар в Firefox */
-    
-    /* ГЛАВНОЕ ИСПРАВЛЕНИЕ: */
-    justify-content: center; /* Центрирует кнопки на широком экране */
+    scrollbar-width: none; 
+    justify-content: center;
 }
 
-/* На мобильных устройствах переключаем на выравнивание по левому краю, чтобы работал скролл */
 @media (max-width: 768px) {
-    .sub-nav { 
-        justify-content: flex-start; 
-    }
+    .sub-nav { justify-content: flex-start; }
 }
 
-.sub-nav::-webkit-scrollbar { 
-    display: none; /* Скрываем скроллбар в Chrome/Safari */
-}
+.sub-nav::-webkit-scrollbar { display: none; }
 
 .sub-nav-btn { 
     background: #fff; 
@@ -97,19 +88,12 @@ h1 { font-size: 26px; letter-spacing: 4px; text-transform: uppercase; margin: 0;
     color: var(--apple-muted); 
     cursor: pointer; 
     white-space: nowrap; 
-    flex-shrink: 0; /* Чтобы кнопки не сжимались */
+    flex-shrink: 0; 
     transition: transform 0.1s ease;
 }
 
-.sub-nav-btn:active {
-    transform: scale(0.95); /* Эффект нажатия */
-}
-
-.sub-nav-btn.active { 
-    background: var(--apple-orange); 
-    color: #fff; 
-    border-color: var(--apple-orange); 
-}
+.sub-nav-btn:active { transform: scale(0.95); }
+.sub-nav-btn.active { background: var(--apple-orange); color: #fff; border-color: var(--apple-orange); }
 
 /* Секции меню */
 .menu-view { display: none; padding-bottom: 100px; }
@@ -148,47 +132,37 @@ h1 { font-size: 26px; letter-spacing: 4px; text-transform: uppercase; margin: 0;
     background: var(--apple-gray); 
     border-radius: 16px; 
     overflow: hidden; 
+    cursor: pointer;
 }
 
-.item-photo img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
+.item-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.item-title-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; }
+.item-name { font-size: 17px; font-weight: 600; margin: 0; line-height: 1.3; }
+.item-price { font-size: 17px; font-weight: 700; }
+.vol { font-size: 13px; font-weight: 400; color: var(--apple-muted); margin-left: 5px; }
+
+/* Фото на весь экран */
+#photo-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
 }
 
-.item-title-row { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: flex-start; 
-    gap: 15px; 
+#full-photo {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 12px;
 }
 
-.item-name { 
-    font-size: 17px; 
-    font-weight: 600; 
-    margin: 0; 
-    line-height: 1.3; 
+.close-btn {
+    position: absolute;
+    top: 20px; right: 20px;
+    color: white; font-size: 40px; cursor: pointer;
 }
 
-.item-price { 
-    font-size: 17px; 
-    font-weight: 700; 
-}
-
-.vol {
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--apple-muted);
-    margin-left: 5px;
-}
-
-/* Подвал */
-footer { 
-    padding: 60px 20px; 
-    text-align: center; 
-    background: var(--apple-gray); 
-    color: var(--apple-muted); 
-    font-size: 13px; 
-}
-
-footer p { margin: 5px 0; }
+footer { padding: 60px 20px; text-align: center; background: var(--apple-gray); color: var(--apple-muted); font-size: 13px; }
