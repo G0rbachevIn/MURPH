@@ -22,32 +22,30 @@
             scroll-behavior: smooth;
         }
 
-        header {
-            padding: 30px 0 10px;
-            text-align: center;
-        }
+        header { padding: 30px 0 10px; text-align: center; }
         h1 { font-size: 26px; letter-spacing: 4px; margin: 0; text-transform: uppercase; }
 
-        /* Главная навигация */
-        .main-nav-container {
-            position: sticky; top: 0;
+        /* Фиксированная навигация */
+        .sticky-nav-group {
+            position: sticky;
+            top: 0;
+            z-index: 2000;
             background: rgba(255,255,255,0.9);
             backdrop-filter: blur(15px);
-            z-index: 2000;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
+
         .main-nav { display: flex; justify-content: center; gap: 30px; padding: 12px 0; }
         .main-nav-btn {
-            background: none; border: none; font-size: 15px;
+            background: none; border: none; font-size: 15px; font-weight: 500;
             color: var(--apple-muted); cursor: pointer; padding: 5px 0;
+            text-transform: uppercase;
         }
         .main-nav-btn.active { color: var(--apple-black); border-bottom: 2px solid var(--apple-black); }
 
-        /* Категории (Центрированные) */
+        /* Подменю (Категории) */
         .sub-nav-container {
-            position: sticky; top: 46px;
             background: var(--apple-gray);
-            z-index: 1000;
             display: none;
             padding: 10px 0;
             border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -55,26 +53,29 @@
         .sub-nav-container.active { display: block; }
         
         .sub-nav {
-            display: flex; justify-content: center;
+            display: flex; justify-content: flex-start;
             overflow-x: auto; white-space: nowrap; gap: 8px; padding: 0 15px;
+            /* Для центрирования, если кнопок мало */
+            -webkit-overflow-scrolling: touch;
         }
+        @media (min-width: 600px) { .sub-nav { justify-content: center; } }
         .sub-nav::-webkit-scrollbar { display: none; }
 
         .sub-nav-btn {
             background: #fff; border: 1px solid rgba(0,0,0,0.05);
             padding: 7px 16px; border-radius: 20px;
             font-size: 13px; font-weight: 500; color: var(--apple-muted);
-            cursor: pointer; transition: 0.3s;
+            cursor: pointer; transition: 0.3s; flex-shrink: 0;
         }
         .sub-nav-btn.active {
             background: var(--apple-orange); color: #fff; border-color: var(--apple-orange);
         }
 
-        /* Список блюд */
+        /* Контент */
         .menu-view { display: none; padding-bottom: 100px; }
         .menu-view.active { display: block; }
 
-        .category-section { padding: 40px 15px 10px; scroll-margin-top: 110px; }
+        .category-section { padding: 40px 15px 10px; scroll-margin-top: 130px; }
         .category-header { font-size: 16px; font-weight: 700; text-transform: uppercase; color: var(--apple-muted); margin-bottom: 25px; }
 
         .item { display: grid; grid-template-columns: 85px 1fr; gap: 15px; margin-bottom: 25px; }
@@ -88,7 +89,6 @@
         .item-desc { font-size: 13px; color: var(--apple-muted); margin: 5px 0 0; line-height: 1.4; }
         .vol { font-size: 11px; color: var(--apple-muted); font-weight: 400; margin-left: 5px; }
 
-        /* Доп. опции сеткой */
         .extras-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background: var(--apple-gray); padding: 15px; border-radius: 12px; }
         .extra-item { font-size: 13px; display: flex; justify-content: space-between; }
 
@@ -101,32 +101,32 @@
     <h1>MURPH</h1>
 </header>
 
-<div class="main-nav-container">
+<div class="sticky-nav-group">
     <div class="main-nav">
         <button id="main-btn-food" class="main-nav-btn active" onclick="switchMain('food')">Еда</button>
         <button id="main-btn-drinks" class="main-nav-btn" onclick="switchMain('drinks')">Напитки</button>
     </div>
-</div>
 
-<div id="sub-food" class="sub-nav-container active">
-    <div class="sub-nav">
-        <button class="sub-nav-btn active" onclick="go('breakfast')">Завтраки</button>
-        <button class="sub-nav-btn" onclick="go('salads')">Салаты</button>
-        <button class="sub-nav-btn" onclick="go('pizza')">Пицца</button>
-        <button class="sub-nav-btn" onclick="go('pasta')">Горячее</button>
-        <button class="sub-nav-btn" onclick="go('soups')">Супы</button>
-        <button class="sub-nav-btn" onclick="go('snacks')">Закуски</button>
-        <button class="sub-nav-btn" onclick="go('sweets')">Сладкое</button>
+    <div id="sub-food" class="sub-nav-container active">
+        <div class="sub-nav">
+            <button class="sub-nav-btn active" onclick="go('breakfast', this)">Завтраки</button>
+            <button class="sub-nav-btn" onclick="go('salads', this)">Салаты</button>
+            <button class="sub-nav-btn" onclick="go('pizza', this)">Пицца</button>
+            <button class="sub-nav-btn" onclick="go('pasta', this)">Горячее</button>
+            <button class="sub-nav-btn" onclick="go('soups', this)">Супы</button>
+            <button class="sub-nav-btn" onclick="go('snacks', this)">Закуски</button>
+            <button class="sub-nav-btn" onclick="go('sweets', this)">Сладкое</button>
+        </div>
     </div>
-</div>
 
-<div id="sub-drinks" class="sub-nav-container">
-    <div class="sub-nav">
-        <button class="sub-nav-btn active" onclick="go('coffee')">Классика</button>
-        <button class="sub-nav-btn" onclick="go('tea')">Чай</button>
-        <button class="sub-nav-btn" onclick="go('matcha')">Матча</button>
-        <button class="sub-nav-btn" onclick="go('special')">Special</button>
-        <button class="sub-nav-btn" onclick="go('other')">Другое</button>
+    <div id="sub-drinks" class="sub-nav-container">
+        <div class="sub-nav">
+            <button class="sub-nav-btn active" onclick="go('coffee', this)">Классика</button>
+            <button class="sub-nav-btn" onclick="go('tea', this)">Чай</button>
+            <button class="sub-nav-btn" onclick="go('matcha', this)">Матча</button>
+            <button class="sub-nav-btn" onclick="go('special', this)">Special</button>
+            <button class="sub-nav-btn" onclick="go('other', this)">Другое</button>
+        </div>
     </div>
 </div>
 
@@ -135,7 +135,7 @@
         <div class="category-header">Завтраки (весь день)</div>
         <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Зелёная гречка, горошек, пармезан</p><span class="item-price">490</span></div></div></div>
         <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Пряная шакшука, копчёная фета, яйца пашот, кинза</p><span class="item-price">690</span></div></div></div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Сырники, мисо карамель, сметана, попкорн из гречки</p><span class="item-price">690</span></div></div></div>
+        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Сырники, мисо карамель, сметана</p><span class="item-price">690</span></div></div></div>
         <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Ленивые вареники, клубничное варенье, мак, сметана</p><span class="item-price">690</span></div></div></div>
         <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Мортаделла, тартин, авокадо, камамбер, джем смородина, яйцо</p><span class="item-price">790</span></div></div></div>
         <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Французский омлет, камамбер, трюфельное масло</p><span class="item-price">790</span></div></div></div>
@@ -151,39 +151,4 @@
         <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Сладкий томат, огурец, перец, оливки, фета</p><span class="item-price">790</span></div></div></div>
         <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Латук, айоли тунец, хрустящий цыплёнок, пармезан</p><span class="item-price">850</span></div></div></div>
         <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Боул — креветки, киноа, авокадо, томат</p><span class="item-price">890</span></div></div></div>
-    </section>
-
-    <section id="pizza" class="category-section">
-        <div class="category-header">Пицца</div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Пицца Пепперони</p><span class="item-price">850</span></div></div></div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Пицца Груша Горгонзола</p><span class="item-price">850</span></div></div></div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Пицца Прошутто Фунги</p><span class="item-price">850</span></div></div></div>
-    </section>
-
-    <section id="pasta" class="category-section">
-        <div class="category-header">Паста / Горячее</div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Куриное филе гриль, фенхель, апельсин</p><span class="item-price">690</span></div></div></div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Ньокки в томатном соусе со страчателлой</p><span class="item-price">790</span></div></div></div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Паста маккерони, куриная грудка, томаты</p><span class="item-price">890</span></div></div></div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Лазанья с уткой</p><span class="item-price">899</span></div></div></div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Лингвини, креветки, сливки, песто</p><span class="item-price">990</span></div></div></div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Чизбургер из мраморной говядины</p><span class="item-price">990</span></div></div></div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Бифштекс, картофельный крем, перечный соус</p><span class="item-price">990</span></div></div></div>
-    </section>
-
-    <section id="soups" class="category-section">
-        <div class="category-header">Супы</div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Томатный суп, креветка, вонголе</p><span class="item-price">650</span></div></div></div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Куриный бульон, цыплёнок гриль, яйцо</p><span class="item-price">650</span></div></div></div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Тыквенный крем суп с креветкой</p><span class="item-price">690</span></div></div></div>
-    </section>
-
-    <section id="snacks" class="category-section">
-        <div class="category-header">Закуски</div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Хлеб с жжёным маслом</p><span class="item-price">370</span></div></div></div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Тартин, хумус, дзадзики, икра баклажана</p><span class="item-price">650</span></div></div></div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Картофель фри, грибное морожное, пармезан</p><span class="item-price">650</span></div></div></div>
-        <div class="item"><div class="item-photo">[фото]</div><div class="item-info"><div class="item-title-row"><p class="item-name">Тар-тар из говядины, трюфель, мусс пармезан</p><span class="item-price">990</span></div></div></div>
-    </section>
-
-    <section id="sweets" class="category-section">
+    </section
