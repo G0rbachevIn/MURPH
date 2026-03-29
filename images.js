@@ -35,9 +35,16 @@ const menuImages = {
 
     // НАПИТКИ
     "espresso": "",
+    "filter": "",
     "capuchino": "",
     "latte": "",
-    "bumble": ""
+    "raf": "",
+    "tea_puer": "",
+    "tea_berry": "",
+    "matcha_latte": "",
+    "matcha_tonic": "",
+    "bumble": "",
+    "espresso_tonic": ""
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -48,11 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 el.src = menuImages[id];
                 el.onclick = function() { openPhoto(this.src); };
             } else {
-                // Если фото не загружено, показываем серый квадрат с иконкой фото
+                el.parentElement.innerHTML = '<span style="color:#ccc; font-size:10px;">[фото]</span>';
                 el.parentElement.style.display = "flex";
                 el.parentElement.style.alignItems = "center";
                 el.parentElement.style.justifyContent = "center";
-                el.parentElement.innerHTML = '<span style="color:#ccc; font-size:10px;">[фото]</span>';
             }
         });
     }
