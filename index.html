@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MURPH MENU</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --muted: #757575;
+            --accent: #000000;
+            --section-bg: #f9f9f9;
+        }
+
+        body {
+            font-family: -apple-system, system-ui, sans-serif;
+            margin: 0; padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            padding: 40px 20px 20px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        h1 { font-size: 28px; letter-spacing: 3px; margin: 0; text-transform: uppercase; }
+
+        .nav-container {
+            position: sticky; top: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        .main-nav {
+            display: flex; justify-content: center; gap: 30px; padding: 15px 0;
+        }
+
+        .nav-btn {
+            background: none; border: none; font-weight: 600; font-size: 14px;
+            text-transform: uppercase; color: var(--muted); cursor: pointer;
+        }
+
+        .nav-btn.active { color: var(--text); border-bottom: 2px solid var(--text); }
+
+        .menu-page { display: none; padding: 20px 15px 80px; }
+        .menu-page.active { display: block; }
+
+        .category { margin-top: 40px; }
+        .category:first-child { margin-top: 10px; }
+        .category-title { 
+            font-size: 16px; font-weight: 700; text-transform: uppercase; 
+            margin-bottom: 20px; letter-spacing: 1px; color: var(--accent);
+        }
+
+        .item { display: flex; justify-content: space-between; margin-bottom: 22px; align-items: flex-start; }
+        .item-info { flex: 1; padding-right: 15px; }
+        .item-name { font-size: 15px; font-weight: 500; margin: 0; line-height: 1.3; }
+        .item-desc { font-size: 13px; color: var(--muted); margin: 4px 0 0; line-height: 1.4; }
+        .item-price { font-size: 15px; font-weight: 600; white-space: nowrap; }
+        .vol { font-size: 11px; color: var(--muted); font-weight: 400; margin-left: 5px; }
+
+        .constructor-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+            background: var(--section-bg); padding: 15px; border-radius: 8px;
+        }
+        .const-item { font-size: 13px; display: flex; justify-content: space-between; }
+
+        footer {
+            padding: 40px 20px; text-align: center; background: var(--section-bg);
+            font-size: 12px; color: var(--muted); line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MURPH</h1>
+</header>
+
+<div class="nav-container">
+    <div class="main-nav">
+        <button class="nav-btn active" onclick="show('food', this)">Food</button>
+        <button class="nav-btn" onclick="show('drinks', this)">Drinks</button>
+    </div>
+</div>
+
+<div id="food" class="menu-page active">
+    
+    <div class="category">
+        <div class="category-title">Завтраки (весь день)</div>
+        <div class="item">
+            <div class="item-info">
+                <p class="item-name">Зелёная гречка, горошек, пармезан</p>
+            </div>
+            <div class="item-price">490</div>
+        </div>
+        <div class="item">
+            <div class="item-info">
+                <p class="item-name">Пряная шакшука</p>
+                <p class="item-desc">Копчёная фета, яйца пашот, кинза</p>
+            </div>
+            <div class="item-price">690</div>
+        </div>
+        <div class="item">
+            <div class="item-info">
+                <p class="item-name">Сырники</p>
+                <p class="item-desc">Мисо карамель, сметана, попкорн из гречки</p>
+            </div>
+            <div class="item-price">690</div>
+        </div>
+        <div class="item">
+            <div class="item-info">
+                <p class="item-name">Тост бриошь, пашот, лосось</p>
+                <p class="item-desc">Крем фета с зеленью, микс трав</p>
+            </div>
+            <div class="item-price">950</div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">Салаты</div>
+        <div class="item">
+            <div class="item-info"><p class="item-name">Зелёный салат авокадо</p></div>
+            <div class="item-price">690</div>
+        </div>
+        <div class="item">
+            <div class="item-info"><p class="item-name">Боул - креветки, киноа</p></div>
+            <div class="item-price">890</div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">Пасты / Горячее</div>
+        <div class="item">
+            <div class="item-info"><p class="item-name">Лазанья с уткой</p></div>
+            <div class="item-price">899</div>
+        </div>
+        <div class="item">
+            <div class="item-info"><p class="item-name">Бифштекс из мраморной говядины</p>
+            <p class="item-desc">Картофельный крем, перечный соус</p></div>
+            <div class="item-price">990</div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">Конструктор завтраков</div>
+        <div class="constructor-grid">
+            <div class="const-item"><span>Лосось</span> <span>400</span></div>
+            <div class="const-item"><span>Яйцо</span> <span>400</span></div>
+            <div class="const-item"><span>Мортаделла</span> <span>400</span></div>
+            <div class="const-item"><span>Авокадо</span> <span>250</span></div>
+            <div class="const-item"><span>Хлеб</span> <span>200</span></div>
+            <div class="const-item"><span>Страчателла</span> <span>350</span></div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">Сладкое</div>
+        <div class="item">
+            <div class="item-info"><p class="item-name">Тирамису</p></div>
+            <div class="item-price">590</div>
+        </div>
+        <div class="item">
+            <div class="item-info"><p class="item-name">Песочный чизкейк, матча</p></div>
+            <div class="item-price">490</div>
+        </div>
+    </div>
+</div>
+
+<div id="drinks" class="menu-page">
+    <div class="category">
+        <div class="category-title">Классика</div>
+        <div class="item">
+            <div class="item-info"><p class="item-name">Фильтр Кофе <span class="vol">200 / 300 мл</span></p></div>
+            <div class="item-price">270 / 310</div>
+        </div>
+        <div class="item">
+            <div class="item-info"><p class="item-name">Капучино <span class="vol">200 / 300 мл</span></p></div>
+            <div class="item-price">350 / 420</div>
+        </div>
+        <div class="item">
+            <div class="item-info"><p class="item-name">Раф Классический <span class="vol">300 мл</span></p></div>
+            <div class="item-price">530</div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">Special</div>
+        <div class="item">
+            <div class="item-info"><p class="item-name">Айс-Латте Тирамису <span class="vol">400 мл</span></p></div>
+            <div class="item-price">500</div>
+        </div>
+        <div class="item">
+            <div class="item-info"><p class="item-name">Гранатовый Бамбл <span class="vol">400 мл</span></p></div>
+            <div class="item-price">460</div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">Чай <span class="vol">500 мл</span></div>
+        <div class="item">
+            <div class="item-info"><p class="item-name">Те Гуань Инь / Пуэр / Габа</p></div>
+            <div class="item-price">450</div>
+        </div>
+        <div class="item">
+            <div class="item-info"><p class="item-name">Яблоко-Бузина</p></div>
+            <div class="item-price">550</div>
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-title">Доп. опции</div>
+        <div class="constructor-grid">
+            <div class="const-item"><span>Альт. молоко</span> <span>+90</span></div>
+            <div class="const-item"><span>Доп. шот</span> <span>+120</span></div>
+            <div class="const-item"><span>Сироп</span> <span>+60</span></div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>*Все молочные напитки по умолчанию готовим на безлактозном молоке [cite: 37]</p>
+    <p>Если у Вас аллергия, пожалуйста, предупредите официанта [cite: 38, 39]</p>
+    <p>murph.coffee</p>
+</footer>
+
+<script>
+    function show(id, btn) {
+        document.querySelectorAll('.menu-page').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        btn.classList.add('active');
+        window.scrollTo(0,0);
+    }
+</script>
+
+</body>
+</html>
