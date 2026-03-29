@@ -1,5 +1,5 @@
 const menuImages = {
-    // ЗАВТРАКИ
+    // ЕДА
     "grechka": "grechka.jpg",
     "shakshuka": "shakshuka.jpg",
     "syirniki": "syirniki.jpg",
@@ -10,19 +10,13 @@ const menuImages = {
     "draniki_salmon": "draniki.jpg",
     "tost_salmon": "tost.jpg",
     "beygl": "beygl.jpg",
-
-    // САЛАТЫ
     "green_salad": "",
     "greek_salad": "",
     "latuk_salad": "",
     "bowl": "",
-
-    // ПИЦЦА
     "pepperoni": "Pepperoni1.jpg", 
-    "pizza_pear": "pizza_pear.jpg",     // <--- ИСПРАВЛЕНО
-    "pizza_proshutto": "pizza_proshutto.jpg", // <--- ИСПРАВЛЕНО
-
-    // ГОРЯЧЕЕ
+    "pizza_pear": "pizza_pear.jpg",
+    "pizza_proshutto": "pizza_proshutto.jpg",
     "chicken_grill": "",
     "nyokki": "",
     "makkeroni": "",
@@ -30,8 +24,10 @@ const menuImages = {
     "lingvini": "",
     "burger": "",
     "bifshteks": "",
-
-    // СЛАДКОЕ
+    "soup_tomato": "",
+    "soup_chicken": "",
+    "fries": "",
+    "tartar": "",
     "shu": "",
     "ice_cream_salt": "",
     "cheesecake_strawberry": "",
@@ -41,9 +37,7 @@ const menuImages = {
     "espresso": "",
     "capuchino": "",
     "latte": "",
-    "bumble": "",
-    "tea_puer": "",
-    "tea_berry": ""
+    "bumble": ""
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -54,8 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 el.src = menuImages[id];
                 el.onclick = function() { openPhoto(this.src); };
             } else {
-                // Если фото нет - скрываем пустой квадрат или ставим заглушку
-                el.style.display = "none"; 
+                // Если фото не загружено, показываем серый квадрат с иконкой фото
+                el.parentElement.style.display = "flex";
+                el.parentElement.style.alignItems = "center";
+                el.parentElement.style.justifyContent = "center";
+                el.parentElement.innerHTML = '<span style="color:#ccc; font-size:10px;">[фото]</span>';
             }
         });
     }
