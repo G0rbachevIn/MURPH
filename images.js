@@ -48,30 +48,45 @@ const menuImages = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Находим все картинки с атрибутом data-img
-    const images = document.querySelectorAll('img[data-img]');
-    
-    images.forEach(img => {
-        const id = img.getAttribute('data-img');
-        const filename = menuImages[id];
-        const parent = img.parentElement;
+    // Добавляем случайное число к ссылке, чтобы GitHub не выдавал старую версию из кеша
+    const cacheBuster = "?v=" + new Date().getTime();
 
-        if (filename && filename.trim() !== "") {
-            // Если фото есть
-            img.src = filename;
-            img.style.display = "block";
-            img.onclick = function() { openPhoto(this.src); };
-        } else {
-            // Если фото пустое, убираем тег img и ставим текст
-            img.style.display = "none";
-            parent.style.display = "flex";
-            parent.style.alignItems = "center";
-            parent.style.justifyContent = "center";
-            parent.style.background = "#f5f5f7";
-            parent.innerHTML = '<span style="color:#ccc; font-size:10px; text-transform:uppercase; letter-spacing:1px;">[фото]</span>';
-        }
-    });
+    for (let id in menuImages) {
+        const imgElements = document.querySelectorAll(`[data-img="${id}"]`);
+        
+        imgElements.forEach(img => {
+            const fileName = menuImages[id];
+            const parent = img.parentElement;
+
+            if (fileName && fileName.trim() !== "") {
+                // Пытаемся загрузить картинку
+                img.src = fileName + cacheBuster;
+                img.style.display = "block";
+                
+                // Если картинка загрузилась — вешаем клик
+                img.onclick = () => openPhoto(img.src);
+
+                // Если картинка НЕ нашлась (ошибка 404), заменяем на заглушку
+                img.onerror = () => {
+                    img.style.display = "none";
+                    showPlaceholder(parent);
+                };
+            } else {
+                // Если в списке пусто — сразу заглушку
+                img.style.display = "none";
+                showPlaceholder(parent);
+            }
+        });
+    }
 });
+
+function showPlaceholder(container) {
+    container.style.display = "flex";
+    container.style.alignItems = "center";
+    container.style.justifyContent = "center";
+    container.style.background = "#f5f5f7";
+    container.innerHTML = '<span style="color:#ccc; font-size:10px; text-transform:uppercase;">[фото]</span>';
+}
 
 function openPhoto(src) {
     const overlay = document.getElementById('photo-overlay');
