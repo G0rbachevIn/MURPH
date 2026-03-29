@@ -14,7 +14,7 @@ const menuImages = {
     "greek_salad": "",
     "latuk_salad": "",
     "bowl": "",
-    "pepperoni": "Pepperoni1.jpg", 
+    "pepperoni": "pepperoni.jpg", 
     "pizza_pear": "pizza_pear.jpg",
     "pizza_proshutto": "pizza_proshutto.jpg",
     "chicken_grill": "",
