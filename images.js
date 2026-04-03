@@ -1,5 +1,9 @@
 const menuImages = {
-    // === ЕДА ===
+    // ==========================================
+    // ЕДА
+    // ==========================================
+
+    // --- Завтраки ---
     "grechka": "grechka.jpg",
     "shakshuka": "shakshuka.jpg",
     "syirniki": "syirniki.jpg",
@@ -10,13 +14,19 @@ const menuImages = {
     "draniki_salmon": "draniki.jpg",
     "tost_salmon": "tost.jpg",
     "beygl": "beygl.jpg",
+
+    // --- Салаты ---
     "green_salad": "green_salad.jpg",
     "greek_salad": "greek_salad.jpg",
     "latuk_salad": "latuk_salad.jpg",
     "bowl": "bowl.jpg",
+
+    // --- Пицца ---
     "pepperoni": "pepperoni.jpg", 
     "pizza_pear": "pizza_pear.jpg",
     "pizza_proshutto": "pizza_proshutto.jpg",
+
+    // --- Пасты / Горячее ---
     "chicken_grill": "chicken_grill.jpg",
     "nyokki": "nyokki.jpg",
     "makkeroni": "makkeroni.jpg",
@@ -24,13 +34,19 @@ const menuImages = {
     "lingvini": "lingvini.jpg",
     "burger": "burger.jpg",
     "bifshteks": "bifshteks.jpg",
+
+    // --- Супы ---
     "soup_tomato": "soup_tomato.jpg",
     "soup_chicken": "soup_chicken.jpg",
     "soup_pumpkin": "soup_pumpkin.jpg", 
+
+    // --- Закуски ---
     "bread_butter": "bread_butter.jpg", 
     "trio_dip": "trio_dip.jpg",        
     "fries": "fries.jpg",
     "tartar": "tartar.jpg",
+
+    // --- Сладкое ---
     "bun": "bun.jpg",                  
     "shu": "shu.jpg",
     "creme_brulee": "creme_brulee.jpg", 
@@ -44,7 +60,12 @@ const menuImages = {
     "french_toast": "french_toast.jpg",     
     "apple_pie": "apple_pie.jpg",           
 
-    // === НАПИТКИ ===
+
+    // ==========================================
+    // НАПИТКИ
+    // ==========================================
+
+    // --- Классика ---
     "espresso": "espresso.jpg",
     "americano": "americano.jpg",
     "filter": "filter.jpg",
@@ -56,15 +77,21 @@ const menuImages = {
     "ice_latte": "ice_latte.jpg",
     "espresso_tonic": "espresso_tonic.jpg",
     "bumble": "bumble.jpg",
+
+    // --- Чай ---
     "tea_puer": "tea_puer.jpg",
     "tea_gaba": "tea_gaba.jpg",
     "tea_herbal": "tea_herbal.jpg",
     "tea_berry": "tea_berry.jpg",
+
+    // --- Матча ---
     "matcha_latte": "matcha_latte.jpg",
     "matcha_mint": "matcha_mint.jpg",
     "matcha_white_choc": "matcha_white_choc.jpg",
     "matcha_tonic": "matcha_tonic.jpg",
     "matcha_banana": "matcha_banana.jpg",
+
+    // --- Special ---
     "latte_tiramisu": "latte_tiramisu.jpg",
     "bumble_pomegranate": "bumble_pomegranate.jpg",
     "lemonade_strawberry": "lemonade_strawberry.jpg",
@@ -74,8 +101,18 @@ const menuImages = {
     "filter_berries": "filter_berries.jpg",
     "raf_caramel": "raf_caramel.jpg",
 
-    // === АЛКОГОЛЬ ===
-    // Вино
+    // --- Другое ---
+    "cacao": "cacao.jpg",
+    "fresh_orange": "fresh_orange.jpg",
+    "fresh_grapefruit": "fresh_grapefruit.jpg",
+    "water": "water.jpg",
+
+
+    // ==========================================
+    // АЛКОГОЛЬ
+    // ==========================================
+
+    // --- Вино ---
     "wine_bruni": "wine_bruni.jpg",
     "wine_cava": "wine_cava.jpg",
     "wine_riesling": "wine_riesling.jpg",
@@ -84,7 +121,7 @@ const menuImages = {
     "wine_castillo": "wine_castillo.jpg",
     "wine_anjou": "wine_anjou.jpg",
 
-    // Коктейли
+    // --- Коктейли ---
     "cocktail_aperol": "cocktail_aperol.jpg",
     "cocktail_espresso": "cocktail_espresso.jpg",
     "cocktail_gummy": "cocktail_gummy.jpg",
@@ -93,12 +130,12 @@ const menuImages = {
     "cocktail_bee": "cocktail_bee.jpg",
     "cocktail_blue": "cocktail_blue.jpg",
 
-    // Б/А Коктейли
+    // --- Б/А Коктейли ---
     "cocktail_wrong": "cocktail_wrong.jpg",
     "cocktail_basil": "cocktail_basil.jpg",
     "cocktail_nany": "cocktail_nany.jpg",
 
-    // Пиво и Сидр
+    // --- Пиво и Сидр ---
     "beer_corona": "beer_corona.jpg",
     "beer_bluemoon": "beer_bluemoon.jpg",
     "beer_tsingtao": "beer_tsingtao.jpg",
