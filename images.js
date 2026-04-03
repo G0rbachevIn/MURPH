@@ -86,6 +86,7 @@ const menuImages = {
 
     // --- Матча ---
     "matcha_latte": "matcha_latte.jpg",
+    "ice_matcha_latte": "ice_matcha_latte.jpg",
     "matcha_mint": "matcha_mint.jpg",
     "matcha_white_choc": "matcha_white_choc.jpg",
     "matcha_tonic": "matcha_tonic.jpg",
