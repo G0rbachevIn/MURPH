@@ -22,7 +22,7 @@
         <button class="sub-nav-btn active" onclick="go('breakfast')">Завтраки</button>
         <button class="sub-nav-btn" onclick="go('salads')">Салаты</button>
         <button class="sub-nav-btn" onclick="go('pizza')">Пицца</button>
-        <button class="sub-nav-btn" onclick="go('pasta')">Горячее</button>
+        <button class="sub-nav-btn" onclick="go('pasta')">Пасты / Горячее</button>
         <button class="sub-nav-btn" onclick="go('soups')">Супы</button>
         <button class="sub-nav-btn" onclick="go('snacks')">Закуски</button>
         <button class="sub-nav-btn" onclick="go('sweets')">Сладкое</button>
@@ -32,10 +32,11 @@
 
 <div id="sub-drinks" class="sub-nav-container">
     <div class="sub-nav">
-        <button class="sub-nav-btn active" onclick="go('coffee')">Кофе</button>
+        <button class="sub-nav-btn active" onclick="go('coffee')">Классика</button>
         <button class="sub-nav-btn" onclick="go('tea')">Чай</button>
         <button class="sub-nav-btn" onclick="go('matcha')">Матча</button>
         <button class="sub-nav-btn" onclick="go('special')">Special</button>
+        <button class="sub-nav-btn" onclick="go('other')">Другое</button>
     </div>
 </div>
 
@@ -43,23 +44,23 @@
     <section id="breakfast" class="category-section">
         <div class="category-header">Завтраки (весь день)</div>
         <div class="item"><div class="item-photo"><img data-img="grechka" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Зелёная гречка, горошек, пармезан</p><span class="item-price">490</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="shakshuka" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Пряная шакшука, копчёная фета, яйца пашот</p><span class="item-price">690</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="syirniki" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Сырники, мисо карамель, попкорн из гречки</p><span class="item-price">690</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="vareniki" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Ленивые вареники, клубничное варенье, мак</p><span class="item-price">690</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="mortadella_breakfast" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Мортаделла, тартин, авокадо, камамбер</p><span class="item-price">790</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="omlet" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Французский омлет, камамбер, трюфельное масло</p><span class="item-price">790</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="glazunya" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Глазунья, говяжья колбаска, драник, фасоль</p><span class="item-price">890</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="draniki_salmon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Хрустящие драники, слабосолёный лосось</p><span class="item-price">890</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="tost_salmon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Тост бриошь, пашот, лосось, крем фета</p><span class="item-price">950</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="beygl" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Творожный бейгл, мортаделла, страчателла</p><span class="item-price">990</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="shakshuka" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Пряная шакшука, копчёная фета, яйца пашот, кинза</p><span class="item-price">690</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="syirniki" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Сырники, мисо карамель, сметана, попкорн из гречки</p><span class="item-price">690</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="vareniki" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Ленивые вареники, клубничное варенье, мак, сметана</p><span class="item-price">690</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="mortadella_breakfast" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Мортаделла, тартин, авокадо, камамбер, джем смородина, яйцо, взбитое масло</p><span class="item-price">790</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="omlet" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Французский омлет, камамбер, трюфельное масло, микс трав</p><span class="item-price">790</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="glazunya" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Глазунья, говяжья колбаска, драник, слабосолёный огурец, пикантная фасоль, микс трав</p><span class="item-price">890</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="draniki_salmon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Хрустящие драники, слабосолёный лосось, копчёная сметана, слабосолёные огурцы</p><span class="item-price">890</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="tost_salmon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Тост бриошь, пашот, слабосолёный лосось, крем фета с зеленью, микс трав</p><span class="item-price">950</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="beygl" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Творожный бейгл, мортаделла, страчателла, романо, песто</p><span class="item-price">990</span></div></div></div>
     </section>
 
     <section id="salads" class="category-section">
         <div class="category-header">Салаты</div>
-        <div class="item"><div class="item-photo"><img data-img="green_salad" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Зелёный салат авокадо</p><span class="item-price">690</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="greek_salad" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Сладкий томат, огурец, перец, оливки, фета</p><span class="item-price">790</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="latuk_salad" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Латук, айоли тунец, хрустящий цыплёнок</p><span class="item-price">850</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="bowl" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Боул — креветки, киноа, авокадо, томат</p><span class="item-price">890</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="green_salad" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Зелёный салат авокадо, микс трав, огурцы, зелёный горошек, цитрусовая заправка</p><span class="item-price">690</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="greek_salad" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Сладкий томат, огурец, болгарский перец, оливки, фета</p><span class="item-price">790</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="latuk_salad" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Латук, айоли тунец, хрустящий цыплёнок, пармезан, сухарики бриошь, каперсы</p><span class="item-price">850</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="bowl" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Боул — креветки, киноа, авокадо, томат, зелёный горошек, микс трав</p><span class="item-price">890</span></div></div></div>
     </section>
 
     <section id="pizza" class="category-section">
@@ -70,74 +71,134 @@
     </section>
 
     <section id="pasta" class="category-section">
-        <div class="category-header">Горячее</div>
-        <div class="item"><div class="item-photo"><img data-img="chicken_grill" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Куриное филе гриль, фенхель, апельсин</p><span class="item-price">690</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="nyokki" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Ньокки в томатном соусе, страчателла</p><span class="item-price">790</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="makkeroni" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Паста маккерони, куриная грудка, шпинат</p><span class="item-price">890</span></div></div></div>
+        <div class="category-header">Пасты / Горячее</div>
+        <div class="item"><div class="item-photo"><img data-img="chicken_grill" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Куриное филе гриль, фенхель, апельсин, слабосолёный огурец</p><span class="item-price">690</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="nyokki" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Ньокки в томатном соусе со страчателлой</p><span class="item-price">790</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="makkeroni" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Паста маккерони, запечённая куриная грудка, томаты, шпинат</p><span class="item-price">890</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="lasagna" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Лазанья с уткой</p><span class="item-price">899</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="lingvini" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Лингвини, креветки, сливки, песто</p><span class="item-price">990</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="lingvini" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Лингвини, креветки, сливки, песто, пармезан</p><span class="item-price">990</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="burger" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Чизбургер из мраморной говядины</p><span class="item-price">990</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="bifshteks" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Бифштекс, картофельный крем, перечный соус</p><span class="item-price">990</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="bifshteks" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Бифштекс из мраморной говядины, картофельный крем, перечный соус</p><span class="item-price">990</span></div></div></div>
     </section>
 
     <section id="soups" class="category-section">
         <div class="category-header">Супы</div>
         <div class="item"><div class="item-photo"><img data-img="soup_tomato" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Томатный суп, креветка, вонголе</p><span class="item-price">650</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="soup_chicken" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Куриный бульон, цыплёнок гриль, лапша</p><span class="item-price">650</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="soup_chicken" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Куриный бульон, цыплёнок гриль, яйцо, лапша</p><span class="item-price">650</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="soup_pumpkin" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Тыквенный крем суп с креветкой</p><span class="item-price">690</span></div></div></div>
     </section>
 
     <section id="snacks" class="category-section">
         <div class="category-header">Закуски</div>
+        <div class="item"><div class="item-photo"><img data-img="bread_butter" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Хлеб с жжёным маслом</p><span class="item-price">370</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="trio_dip" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Тартин, хумус, дзадзики, икра из баклажанов</p><span class="item-price">650</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="fries" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Картофель фри, грибное мороженое, пармезан</p><span class="item-price">650</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="tartar" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Тар-тар из говядины, трюфель, мусс пармезан</p><span class="item-price">990</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="tartar" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Тар-тар из говядины, малосольный огурец, ялтинский лук, трюфель, мусс пармезан, фри</p><span class="item-price">990</span></div></div></div>
     </section>
 
     <section id="sweets" class="category-section">
         <div class="category-header">Сладкое</div>
+        <div class="item"><div class="item-photo"><img data-img="bun" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Булочка</p><span class="item-price">290</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="shu" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Шу с заварным кремом</p><span class="item-price">450</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="ice_cream_salt" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Мороженое, оливковое масло, балийская соль</p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="creme_brulee" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Крем-брюле</p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="napoleon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Наполеон с заварным кремом</p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="ice_cream_salt" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Ванильное мороженое, оливковое масло, балийская соль</p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="cheesecake_matcha" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Песочный чизкейк, матча, взбитые сливки</p><span class="item-price">490</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="cake_lemon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Миндальный кекс с лимоном (без глютена)</p><span class="item-price">490</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="cake_carrot" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Морковный кекс с грецким орехом и сливочным сыром</p><span class="item-price">490</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="cheesecake_strawberry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Чизкейк с клубничным конфитюром</p><span class="item-price">590</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="tiramisu" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Тирамису</p><span class="item-price">590</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="french_toast" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Французский тост с ванильным мороженым и вареньем из клубники</p><span class="item-price">650</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="apple_pie" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Яблочный пирог с ванильным мороженым</p><span class="item-price">690</span></div></div></div>
     </section>
 
     <section id="constructor" class="category-section">
-        <div class="category-header">Допы</div>
+        <div class="category-header">Конструктор завтраков</div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Лосось</span><b>400</b></div>
-            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Мортаделла</span><b>400</b></div>
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Яйцо</span><b>400</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Мортаделла</span><b>400</b></div>
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Страчателла</span><b>350</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Икра баклажана</span><b>350</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Дзадзики</span><b>350</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Хумус</span><b>350</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Жареные креветки</span><b>300</b></div>
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Авокадо</span><b>250</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Сладкие томаты</span><b>250</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Хлеб</span><b>200</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Пармезан</span><b>190</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Зелёный салат</span><b>190</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Творожный сыр</span><b>150</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Огурцы</span><b>150</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Голландский соус</span><b>120</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Оливковое масло</span><b>70</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Сметана</span><b>70</b></div>
         </div>
     </section>
 </div>
 
 <div id="view-drinks" class="menu-view">
     <section id="coffee" class="category-section">
-        <div class="category-header">Кофе</div>
-        <div class="item"><div class="item-photo"><img data-img="espresso" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Эспрессо <span class="vol">40 мл</span></p><span class="item-price">290</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="filter" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Фильтр-кофе <span class="vol">250 мл</span></p><span class="item-price">320</span></div></div></div>
+        <div class="category-header">Классика</div>
+        <div class="item"><div class="item-photo"><img data-img="espresso" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Двойной Эспрессо <span class="vol">40 мл</span></p><span class="item-price">290</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="americano" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Американо <span class="vol">200/300 мл</span></p><span class="item-price">280/399</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="filter" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Фильтр Кофе <span class="vol">200/300 мл</span></p><span class="item-price">270/310</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="v60" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Воронка V60 <span class="vol">300 мл</span></p><span class="item-price">490</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="capuchino" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Капучино <span class="vol">200/300 мл</span></p><span class="item-price">350/420</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="latte" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Латте <span class="vol">300 мл</span></p><span class="item-price">380</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="raf" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Раф <span class="vol">300 мл</span></p><span class="item-price">420</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="flat_white" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Флэт Уайт <span class="vol">200 мл</span></p><span class="item-price">390</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="raf" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Раф Классический <span class="vol">300 мл</span></p><span class="item-price">530</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="ice_latte" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Айс Латте <span class="vol">400 мл</span></p><span class="item-price">440</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="espresso_tonic" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Эспрессо Тоник <span class="vol">400 мл</span></p><span class="item-price">440</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="bumble" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Бамбл <span class="vol">400 мл</span></p><span class="item-price">690</span></div></div></div>
     </section>
 
     <section id="tea" class="category-section">
         <div class="category-header">Чай (500 мл)</div>
-        <div class="item"><div class="item-photo"><img data-img="tea_puer" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Пуэр / Габа / Те Гуань Инь</p><span class="item-price">450</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="tea_berry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Шиповник-Роза / Облепиховый</p><span class="item-price">550</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="tea_puer" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Те Гуань Инь / Пуэр / Габа</p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="tea_herbal" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Гречишный / Травяной / Зелёный с Жасмином / Ассам / Эрл Грей</p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="tea_berry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Ромашка-Клубника / Шиповник-Роза</p><span class="item-price">550</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="tea_berry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Яблоко-Бузина / Облепиховый</p><span class="item-price">550</span></div></div></div>
     </section>
 
     <section id="matcha" class="category-section">
         <div class="category-header">Матча</div>
-        <div class="item"><div class="item-photo"><img data-img="matcha_latte" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Матча Латте <span class="vol">300 мл</span></p><span class="item-price">420</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="matcha_tonic" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Матча Тоник <span class="vol">400 мл</span></p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="matcha_latte" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Матча Латте <span class="vol">200/300 мл</span></p><span class="item-price">330/360</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="matcha_mint" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Матча Медовая Мята <span class="vol">300 мл</span></p><span class="item-price">480</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="matcha_white_choc" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Матча Белый Шоколад <span class="vol">300 мл</span></p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="matcha_latte" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Айс Матча Латте <span class="vol">400 мл</span></p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="matcha_tonic" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Матча Тоник <span class="vol">400 мл</span></p><span class="item-price">430</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="matcha_banana" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Айс Матча Банановый Крем <span class="vol">400 мл</span></p><span class="item-price">590</span></div></div></div>
     </section>
 
     <section id="special" class="category-section">
         <div class="category-header">Special</div>
-        <div class="item"><div class="item-photo"><img data-img="bumble" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Бамбл <span class="vol">400 мл</span></p><span class="item-price">690</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="espresso_tonic" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Эспрессо Тоник <span class="vol">400 мл</span></p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="latte_tiramisu" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Айс-Латте Тирамису <span class="vol">400 мл</span></p><span class="item-price">500</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="bumble_pomegranate" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Гранатовый Бамбл <span class="vol">400 мл</span></p><span class="item-price">460</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="lemonade_strawberry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Лимонад Клубника-Личи <span class="vol">400 мл</span></p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="nitro_apricot" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Нитро Абрикос <span class="vol">200 мл</span></p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="cacao_currant" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Какао Чёрная Смородина <span class="vol">300 мл</span></p><span class="item-price">580</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="latte_cherry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Латте Вишня-Тонка <span class="vol">300 мл</span></p><span class="item-price">460</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="filter_berries" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Фильтр Дикие Ягоды <span class="vol">200 мл</span></p><span class="item-price">350</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="raf_caramel" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Раф Солёная Карамель <span class="vol">300 мл</span></p><span class="item-price">580</span></div></div></div>
+    </section>
+
+    <section id="other" class="category-section">
+        <div class="category-header">Другое</div>
+        <div class="item"><div class="item-photo"><img data-img="cacao" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Какао <span class="vol">300 мл</span></p><span class="item-price">490</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="fresh_orange" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Апельсиновый Фреш <span class="vol">300 мл</span></p><span class="item-price">590</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="fresh_grapefruit" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Грейпфрутовый Фреш <span class="vol">300 мл</span></p><span class="item-price">590</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="water" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Вода газированная / без газа <span class="vol">530 мл</span></p><span class="item-price">490</span></div></div></div>
+        
+        <div class="category-header" style="margin-top: 40px;">Дополнительные опции</div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 10px; max-width: 300px;">
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Альтернативное молоко</span><b>+90</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Дополнительный шот</span><b>+120</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Домашняя солёная карамель</span><b>+80</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Сироп</span><b>+60</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Мёд / Лайм</span><b>+60</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Мята</span><b>+40</b></div>
+        </div>
     </section>
 </div>
 
@@ -147,7 +208,8 @@
 </div>
 
 <footer>
-    <p>*Все молочные напитки на безлактозном молоке</p>
+    <p>*Все молочные напитки, по умолчанию, мы готовим на безлактозном молоке</p>
+    <p>Если у Вас аллергия на какие-нибудь продукты, пожалуйста, предупредите об этом официанта</p>
     <p>murph.coffee</p>
 </footer>
 
