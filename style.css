@@ -166,3 +166,20 @@ h1 { font-size: 26px; letter-spacing: 4px; text-transform: uppercase; margin: 0;
 }
 
 footer { padding: 60px 20px; text-align: center; background: var(--apple-gray); color: var(--apple-muted); font-size: 13px; }
+/* Стили для КБЖУ */
+.kbzhu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.kbzhu-badge {
+    font-size: 11px;
+    color: var(--apple-muted);
+    background: var(--apple-gray);
+    padding: 3px 6px;
+    border-radius: 6px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
