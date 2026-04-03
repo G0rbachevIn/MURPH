@@ -46,22 +46,16 @@ const kbzhuData = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Проходимся по всем блюдам, для которых есть КБЖУ
     for (let id in kbzhuData) {
-        // Ищем картинку с нужным data-img (так как это наш уникальный идентификатор блюда)
         const imgEl = document.querySelector(`[data-img="${id}"]`);
         
         if (imgEl) {
             const kbzhu = kbzhuData[id];
-            
-            // Находим блок с описанием блюда (справа от фото)
             const infoContainer = imgEl.closest('.item').querySelector('.item-info');
             
-            // Создаем контейнер для плашек
             const kbzhuDiv = document.createElement('div');
             kbzhuDiv.className = 'kbzhu-container';
             
-            // Заполняем его стильными бейджами
             kbzhuDiv.innerHTML = `
                 <span class="kbzhu-badge">${kbzhu.k} ккал</span>
                 <span class="kbzhu-badge">Б: ${kbzhu.b}</span>
@@ -69,7 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span class="kbzhu-badge">У: ${kbzhu.u}</span>
             `;
             
-            // Добавляем КБЖУ в самый низ информационного блока блюда
             infoContainer.appendChild(kbzhuDiv);
         }
     }
