@@ -1,5 +1,6 @@
 const menuImages = {
-    // ЕДА
+    // === ЕДА ===
+    // Завтраки
     "grechka": "grechka.jpg",
     "shakshuka": "shakshuka.jpg",
     "syirniki": "syirniki.jpg",
@@ -10,45 +11,91 @@ const menuImages = {
     "draniki_salmon": "draniki.jpg",
     "tost_salmon": "tost.jpg",
     "beygl": "beygl.jpg",
-    "green_salad": "",
-    "greek_salad": "",
-    "latuk_salad": "",
-    "bowl": "",
+
+    // Салаты
+    "green_salad": "green_salad.jpg",
+    "greek_salad": "greek_salad.jpg",
+    "latuk_salad": "latuk_salad.jpg",
+    "bowl": "bowl.jpg",
+
+    // Пицца (если осталась в меню)
     "pepperoni": "pepperoni.jpg", 
     "pizza_pear": "pizza_pear.jpg",
     "pizza_proshutto": "pizza_proshutto.jpg",
-    "chicken_grill": "",
-    "nyokki": "",
-    "makkeroni": "",
-    "lasagna": "",
-    "lingvini": "",
-    "burger": "",
-    "bifshteks": "",
-    "soup_tomato": "",
-    "soup_chicken": "",
-    "fries": "",
-    "tartar": "",
-    "shu": "",
-    "ice_cream_salt": "",
-    "cheesecake_strawberry": "",
-    "tiramisu": "",
 
-    // НАПИТКИ
-    "espresso": "",
-    "filter": "",
-    "capuchino": "",
-    "latte": "",
-    "raf": "",
-    "tea_puer": "",
-    "tea_berry": "",
-    "matcha_latte": "",
-    "matcha_tonic": "",
-    "bumble": "",
-    "espresso_tonic": ""
+    // Горячее / Паста
+    "chicken_grill": "chicken_grill.jpg",
+    "nyokki": "nyokki.jpg",
+    "makkeroni": "makkeroni.jpg",
+    "lasagna": "lasagna.jpg",
+    "lingvini": "lingvini.jpg",
+    "burger": "burger.jpg",
+    "bifshteks": "bifshteks.jpg",
+
+    // Супы
+    "soup_tomato": "soup_tomato.jpg",
+    "soup_chicken": "soup_chicken.jpg",
+    "soup_pumpkin": "soup_pumpkin.jpg", // Новое
+
+    // Закуски
+    "bread_butter": "bread_butter.jpg", // Новое
+    "trio_dip": "trio_dip.jpg",        // Новое
+    "fries": "fries.jpg",
+    "tartar": "tartar.jpg",
+
+    // Сладкое
+    "bun": "bun.jpg",                  // Булочка
+    "shu": "shu.jpg",
+    "creme_brulee": "creme_brulee.jpg", // Новое
+    "napoleon": "napoleon.jpg",         // Новое
+    "ice_cream_salt": "ice_cream_salt.jpg",
+    "cheesecake_matcha": "matcha_cake.jpg", // Новое
+    "cake_lemon": "cake_lemon.jpg",         // Новое
+    "cake_carrot": "cake_carrot.jpg",       // Новое
+    "cheesecake_strawberry": "cheesecake_strawberry.jpg",
+    "tiramisu": "tiramisu.jpg",
+    "french_toast": "french_toast.jpg",     // Новое
+    "apple_pie": "apple_pie.jpg",           // Новое
+
+    // === НАПИТКИ ===
+    // Классика
+    "espresso": "espresso.jpg",
+    "americano": "americano.jpg",
+    "filter": "filter.jpg",
+    "v60": "v60.jpg",
+    "capuchino": "capuchino.jpg",
+    "latte": "latte.jpg",
+    "flat_white": "flat_white.jpg",
+    "raf": "raf.jpg",
+    "ice_latte": "ice_latte.jpg",
+    "espresso_tonic": "espresso_tonic.jpg",
+    "bumble": "bumble.jpg",
+
+    // Чай
+    "tea_puer": "tea_puer.jpg",
+    "tea_gaba": "tea_gaba.jpg",
+    "tea_herbal": "tea_herbal.jpg",
+    "tea_berry": "tea_berry.jpg",
+
+    // Матча
+    "matcha_latte": "matcha_latte.jpg",
+    "matcha_mint": "matcha_mint.jpg",
+    "matcha_white_choc": "matcha_white_choc.jpg",
+    "matcha_tonic": "matcha_tonic.jpg",
+    "matcha_banana": "matcha_banana.jpg",
+
+    // Special
+    "latte_tiramisu": "latte_tiramisu.jpg",
+    "bumble_pomegranate": "bumble_pomegranate.jpg",
+    "lemonade_strawberry": "lemonade_strawberry.jpg",
+    "nitro_apricot": "nitro_apricot.jpg",
+    "cacao_currant": "cacao_currant.jpg",
+    "latte_cherry": "latte_cherry.jpg",
+    "filter_berries": "filter_berries.jpg",
+    "raf_caramel": "raf_caramel.jpg"
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Добавляем случайное число к ссылке, чтобы GitHub не выдавал старую версию из кеша
     const cacheBuster = "?v=" + new Date().getTime();
 
     for (let id in menuImages) {
@@ -59,20 +106,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const parent = img.parentElement;
 
             if (fileName && fileName.trim() !== "") {
-                // Пытаемся загрузить картинку. ЗДЕСЬ МЫ ДОБАВИЛИ ПАПКУ images/
+                // Путь к папке images/
                 img.src = "images/" + fileName + cacheBuster;
                 img.style.display = "block";
                 
-                // Если картинка загрузилась — вешаем клик
                 img.onclick = () => openPhoto(img.src);
 
-                // Если картинка НЕ нашлась (ошибка 404), заменяем на заглушку
                 img.onerror = () => {
                     img.style.display = "none";
                     showPlaceholder(parent);
                 };
             } else {
-                // Если в списке пусто — сразу заглушку
                 img.style.display = "none";
                 showPlaceholder(parent);
             }
@@ -85,7 +129,10 @@ function showPlaceholder(container) {
     container.style.alignItems = "center";
     container.style.justifyContent = "center";
     container.style.background = "#f5f5f7";
-    container.innerHTML = '<span style="color:#ccc; font-size:10px; text-transform:uppercase;">[фото]</span>';
+    // Чтобы не дублировать текст при каждой загрузке
+    if (!container.querySelector('span')) {
+        container.innerHTML = '<span style="color:#ccc; font-size:10px; text-transform:uppercase;">[фото]</span>';
+    }
 }
 
 function openPhoto(src) {
