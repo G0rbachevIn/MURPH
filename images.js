@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const parent = img.parentElement;
 
             if (fileName && fileName.trim() !== "") {
-                // Пытаемся загрузить картинку
-                img.src = fileName + cacheBuster;
+                // Пытаемся загрузить картинку. ЗДЕСЬ МЫ ДОБАВИЛИ ПАПКУ images/
+                img.src = "images/" + fileName + cacheBuster;
                 img.style.display = "block";
                 
                 // Если картинка загрузилась — вешаем клик
