@@ -5,35 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>MURPH MENU</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .lang-switch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        .lang-switch a {
-            text-decoration: none;
-            color: var(--apple-muted);
-            margin: 0 5px;
-            transition: color 0.2s;
-        }
-        .lang-switch a.active {
-            color: var(--apple-black);
-            border-bottom: 2px solid var(--apple-black);
-            padding-bottom: 2px;
-        }
-    </style>
 </head>
 <body>
 
-<header>
-    <h1>MURPH</h1>
-    <div class="lang-switch">
-        <a href="index.html">RU</a>
-        <a href="en.html" class="active">EN</a>
+<header style="position: relative;">
+    <div style="position: absolute; top: 30px; right: 20px; z-index: 3000;">
+        <a href="index.html" style="text-decoration: none; color: var(--apple-muted); font-size: 14px; font-weight: 600; border: 1px solid #eee; padding: 6px 12px; border-radius: 8px; background: #fff;">RU</a>
     </div>
+    <h1>MURPH</h1>
 </header>
 
 <div class="main-nav-container">
@@ -52,8 +31,8 @@
         <button class="sub-nav-btn" onclick="go('pasta')">Pasta / Hot</button>
         <button class="sub-nav-btn" onclick="go('soups')">Soups</button>
         <button class="sub-nav-btn" onclick="go('snacks')">Snacks</button>
-        <button class="sub-nav-btn" onclick="go('sweets')">Desserts</button>
-        <button class="sub-nav-btn" onclick="go('constructor')">Extras</button>
+        <button class="sub-nav-btn" onclick="go('sweets')">Sweets</button>
+        <button class="sub-nav-btn" onclick="go('constructor')">Add-ons</button>
     </div>
 </div>
 
@@ -71,50 +50,50 @@
     <div class="sub-nav">
         <button class="sub-nav-btn active" onclick="go('wine')">Wine</button>
         <button class="sub-nav-btn" onclick="go('cocktails')">Cocktails</button>
-        <button class="sub-nav-btn" onclick="go('na_cocktails')">Mocktails</button>
+        <button class="sub-nav-btn" onclick="go('na_cocktails')">N/A Cocktails</button>
         <button class="sub-nav-btn" onclick="go('beer')">Beer & Cider</button>
     </div>
 </div>
 
 <div id="view-food" class="menu-view active">
     <section id="breakfast" class="category-section">
-        <div class="category-header">Breakfast (all day)</div>
-        <div class="item"><div class="item-photo"><img data-img="grechka" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Green buckwheat, peas, parmesan</p><span class="item-price">490</span></div></div></div>
+        <div class="category-header">Breakfast (All Day)</div>
+        <div class="item"><div class="item-photo"><img data-img="grechka" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Green buckwheat, green peas, parmesan</p><span class="item-price">490</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="shakshuka" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Spicy shakshuka, smoked feta, poached eggs, cilantro</p><span class="item-price">690</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="syirniki" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Syrniki, miso caramel, sour cream, buckwheat popcorn</p><span class="item-price">690</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="vareniki" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Lazy vareniki (dumplings), strawberry jam, poppy seeds, sour cream</p><span class="item-price">690</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="mortadella_breakfast" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Mortadella, tartine, avocado, camembert, blackcurrant jam, egg, whipped butter</p><span class="item-price">790</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="vareniki" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Lazy vareniki, strawberry jam, poppy seeds, sour cream</p><span class="item-price">690</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="omlet" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">French omelet, camembert, truffle oil, mixed herbs</p><span class="item-price">790</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="glazunya" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Fried eggs, beef sausage, potato pancake, salted cucumber, spicy beans, mixed herbs</p><span class="item-price">890</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="draniki_salmon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Crispy potato pancakes, lightly salted salmon, smoked sour cream, salted cucumbers</p><span class="item-price">890</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="tost_salmon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Brioche toast, poached egg, lightly salted salmon, feta cream with herbs</p><span class="item-price">950</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="beygl" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Curd bagel, mortadella, stracciatella, romaine, pesto</p><span class="item-price">990</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="mortadella_breakfast" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Mortadella, tartine, avocado, camembert, blackcurrant jam, egg, whipped butter</p><span class="item-price">850</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="draniki_salmon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Crispy draniki (potato pancakes), lightly salted salmon, smoked sour cream, cucumber</p><span class="item-price">890</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="glazunya" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Fried eggs, beef sausage, draniki, cucumber, spicy beans, mixed herbs</p><span class="item-price">950</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="tost_salmon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Brioche toast, poached egg, lightly salted salmon, feta cream, mixed herbs</p><span class="item-price">950</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="beygl" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Curd bagel, mortadella, stracciatella, romaine lettuce, pesto</p><span class="item-price">1150</span></div></div></div>
     </section>
 
     <section id="salads" class="category-section">
         <div class="category-header">Salads</div>
-        <div class="item"><div class="item-photo"><img data-img="green_salad" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Green salad with avocado, mixed herbs, cucumber, peas, citrus dressing</p><span class="item-price">690</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="greek_salad" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Sweet tomato, cucumber, bell pepper, olives, feta</p><span class="item-price">790</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="green_salad" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Green salad with avocado, mixed herbs, cucumber, green peas, citrus dressing</p><span class="item-price">690</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="latuk_salad" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Lettuce, tuna aioli, crispy chicken, parmesan, brioche croutons, capers</p><span class="item-price">850</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="bowl" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Bowl — shrimp, quinoa, avocado, tomato, peas, mixed herbs</p><span class="item-price">890</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="greek_salad" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Sweet tomato, cucumber, bell pepper, olives, feta</p><span class="item-price">890</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="bowl" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Bowl — shrimp, quinoa, avocado, tomato, green peas, mixed herbs</p><span class="item-price">980</span></div></div></div>
     </section>
 
     <section id="pizza" class="category-section">
-        <div class="category-header">Pizza</div>
+        <div class="category-header">Neapolitan Pizza (from 11:00)</div>
         <div class="item"><div class="item-photo"><img data-img="pepperoni" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Pepperoni Pizza</p><span class="item-price">850</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="pizza_pear" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Pear & Gorgonzola Pizza</p><span class="item-price">850</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="pizza_proshutto" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Prosciutto Funghi Pizza</p><span class="item-price">850</span></div></div></div>
     </section>
 
     <section id="pasta" class="category-section">
-        <div class="category-header">Pasta / Hot Meals</div>
+        <div class="category-header">Pasta / Hot Dishes (from 11:00)</div>
         <div class="item"><div class="item-photo"><img data-img="chicken_grill" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Grilled chicken fillet, fennel, orange, lightly salted cucumber</p><span class="item-price">690</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="nyokki" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Gnocchi in tomato sauce with stracciatella</p><span class="item-price">790</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="makkeroni" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Maccheroni pasta, baked chicken breast, tomatoes, spinach</p><span class="item-price">890</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="lasagna" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Duck lasagna</p><span class="item-price">899</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="lingvini" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Linguine, shrimp, cream, pesto, parmesan</p><span class="item-price">990</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="burger" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Marbled beef cheeseburger</p><span class="item-price">990</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="bifshteks" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Marbled beef steak, potato cream, pepper sauce</p><span class="item-price">990</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="bifshteks" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Marble beef steak, potato cream, pepper sauce, parmesan</p><span class="item-price">990</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="burger" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Marble beef cheeseburger</p><span class="item-price">1150</span></div></div></div>
     </section>
 
     <section id="soups" class="category-section">
@@ -126,33 +105,33 @@
 
     <section id="snacks" class="category-section">
         <div class="category-header">Snacks</div>
-        <div class="item"><div class="item-photo"><img data-img="bread_butter" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Bread with burnt butter</p><span class="item-price">370</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="bread_butter" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Bread with burnt butter</p><span class="item-price">390</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="trio_dip" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Tartine, hummus, tzatziki, eggplant caviar</p><span class="item-price">650</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="fries" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">French fries, mushroom ice cream, parmesan</p><span class="item-price">650</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="tartar" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Beef tartare, salted cucumber, Yalta onion, truffle, parmesan mousse, fries</p><span class="item-price">990</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="tartar" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Beef tartare, cucumber, Yalta onion, truffle, parmesan mousse, fries</p><span class="item-price">990</span></div></div></div>
     </section>
 
     <section id="sweets" class="category-section">
-        <div class="category-header">Desserts</div>
-        <div class="item"><div class="item-photo"><img data-img="bun" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Cinnamon / Poppy seed bun</p><span class="item-price">290</span></div></div></div>
+        <div class="category-header">Sweets</div>
+        <div class="item"><div class="item-photo"><img data-img="bun" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Bun</p><span class="item-price">290</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="shu" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Choux pastry with custard</p><span class="item-price">450</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="creme_brulee" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Crème Brûlée</p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="creme_brulee" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Crème brûlée</p><span class="item-price">450</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="napoleon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Napoleon cake with custard</p><span class="item-price">450</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="ice_cream_salt" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Vanilla ice cream, olive oil, Bali salt</p><span class="item-price">450</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="cheesecake_matcha" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Shortbread cheesecake, matcha, whipped cream</p><span class="item-price">490</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="cake_lemon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Almond lemon cake (gluten-free)</p><span class="item-price">490</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="cake_carrot" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Carrot cake with walnuts and cream cheese</p><span class="item-price">490</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="cheesecake_strawberry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Cheesecake with strawberry confiture</p><span class="item-price">590</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="cake_lemon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Almond lemon cake (gluten-free)</p><span class="item-price">590</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="cheesecake_strawberry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Cheesecake with strawberry jam</p><span class="item-price">590</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="tiramisu" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Tiramisu</p><span class="item-price">590</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="french_toast" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">French toast, vanilla ice cream, strawberry jam</p><span class="item-price">650</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="french_toast" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">French toast with vanilla ice cream and strawberry jam</p><span class="item-price">650</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="apple_pie" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Apple pie with vanilla ice cream</p><span class="item-price">690</span></div></div></div>
     </section>
 
     <section id="constructor" class="category-section">
-        <div class="category-header">Breakfast Constructor</div>
+        <div class="category-header">Breakfast Add-ons</div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Salmon</span><b>400</b></div>
-            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Egg</span><b>400</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Egg (Any style)</span><b>400</b></div>
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Mortadella</span><b>400</b></div>
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Stracciatella</span><b>350</b></div>
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Eggplant caviar</span><b>350</b></div>
@@ -164,7 +143,7 @@
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Bread</span><b>200</b></div>
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Parmesan</span><b>190</b></div>
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Green salad</span><b>190</b></div>
-            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Curd cheese</span><b>150</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Cream cheese</span><b>150</b></div>
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Cucumbers</span><b>150</b></div>
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Hollandaise sauce</span><b>120</b></div>
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Olive oil</span><b>70</b></div>
@@ -177,46 +156,48 @@
     <section id="coffee" class="category-section">
         <div class="category-header">Classic</div>
         <div class="item"><div class="item-photo"><img data-img="espresso" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Double Espresso <span class="vol">40 ml</span></p><span class="item-price">290</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="americano" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Americano <span class="vol">200/300 ml</span></p><span class="item-price">280/399</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="americano" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Americano <span class="vol">200/300 ml</span></p><span class="item-price">280/410</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="filter" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Filter Coffee <span class="vol">200/300 ml</span></p><span class="item-price">270/310</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="v60" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">V60 Pour Over <span class="vol">300 ml</span></p><span class="item-price">490</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="v60" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">V60 Dripper <span class="vol">300 ml</span></p><span class="item-price">490</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="capuchino" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Cappuccino <span class="vol">200/300 ml</span></p><span class="item-price">350/420</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="latte" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Latte <span class="vol">300 ml</span></p><span class="item-price">380</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="flat_white" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Flat White <span class="vol">200 ml</span></p><span class="item-price">390</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="raf" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Classic Raf <span class="vol">300 ml</span></p><span class="item-price">530</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="raf" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Classic Raf <span class="vol">300 ml</span></p><span class="item-price">540</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="ice_latte" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Ice Latte <span class="vol">400 ml</span></p><span class="item-price">440</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="espresso_tonic" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Espresso Tonic <span class="vol">400 ml</span></p><span class="item-price">440</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="bumble" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Bumble <span class="vol">400 ml</span></p><span class="item-price">690</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="coldbrew" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Cold Brew <span class="vol">300 ml</span></p><span class="item-price">400</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="bumble" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Bumble Coffee <span class="vol">400 ml</span></p><span class="item-price">690</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="barista_set" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Barista Set</p><span class="item-price">710</span></div></div></div>
     </section>
 
     <section id="tea" class="category-section">
         <div class="category-header">Tea (500 ml)</div>
-        <div class="item"><div class="item-photo"><img data-img="tea_puer" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Tieguanyin / Puerh / Gaba</p><span class="item-price">450</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="tea_herbal" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Buckwheat / Herbal / Green with Jasmine / Assam / Earl Grey</p><span class="item-price">450</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="tea_berry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Chamomile-Strawberry / Rosehip-Rose</p><span class="item-price">550</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="tea_berry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Apple-Elderberry / Sea Buckthorn</p><span class="item-price">550</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="tea_puer" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Tie Guan Yin / Puer / Gaba / Buckwheat / Herbal / Green with Jasmine / Assam / Earl Grey</p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="tea_berry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Chamomile-Strawberry / Rosehip-Rose / Apple-Elderberry / Sea Buckthorn</p><span class="item-price">550</span></div></div></div>
     </section>
 
     <section id="matcha" class="category-section">
         <div class="category-header">Matcha</div>
         <div class="item"><div class="item-photo"><img data-img="matcha_latte" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Matcha Latte <span class="vol">200/300 ml</span></p><span class="item-price">330/360</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="matcha_mint" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Honey Mint Matcha <span class="vol">300 ml</span></p><span class="item-price">480</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="matcha_white_choc" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">White Chocolate Matcha <span class="vol">300 ml</span></p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="matcha_white_choc" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Matcha White Chocolate <span class="vol">300 ml</span></p><span class="item-price">450</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="ice_matcha_latte" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Ice Matcha Latte <span class="vol">400 ml</span></p><span class="item-price">450</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="matcha_tonic" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Matcha Tonic <span class="vol">400 ml</span></p><span class="item-price">430</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="ice_matcha_blueberry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Ice Matcha Blueberry-Honey <span class="vol">400 ml</span></p><span class="item-price">550</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="matcha_tonic_jasmine" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Matcha Tonic Jasmine-Grape <span class="vol">400 ml</span></p><span class="item-price">550</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="matcha_banana" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Ice Matcha Banana Cream <span class="vol">400 ml</span></p><span class="item-price">590</span></div></div></div>
     </section>
 
     <section id="special" class="category-section">
         <div class="category-header">Special</div>
+        <div class="item"><div class="item-photo"><img data-img="raf_caramel" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Salted Caramel Raf <span class="vol">300 ml</span></p><span class="item-price">580</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="latte_lemongrass" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Kaffir-Lemongrass Latte <span class="vol">300 ml</span></p><span class="item-price">650</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="latte_tiramisu" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Ice Latte Tiramisu <span class="vol">400 ml</span></p><span class="item-price">500</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="bumble_pomegranate" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Pomegranate Bumble <span class="vol">400 ml</span></p><span class="item-price">460</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="lemonade_strawberry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Strawberry-Lychee Lemonade <span class="vol">400 ml</span></p><span class="item-price">450</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="nitro_apricot" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Nitro Apricot <span class="vol">200 ml</span></p><span class="item-price">450</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="cacao_currant" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Blackcurrant Cocoa <span class="vol">300 ml</span></p><span class="item-price">580</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="latte_cherry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Cherry-Tonka Latte <span class="vol">300 ml</span></p><span class="item-price">460</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="filter_berries" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Wild Berries Filter <span class="vol">200 ml</span></p><span class="item-price">350</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="raf_caramel" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Salted Caramel Raf <span class="vol">300 ml</span></p><span class="item-price">580</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="lemonade_classic" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Classic Lemonade <span class="vol">400 ml</span></p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="lemonade_grape_guava" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Grape-Guava Lemonade <span class="vol">400 ml</span></p><span class="item-price">550</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="lemonade_basil_apricot" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Basil-Apricot Lemonade <span class="vol">400 ml</span></p><span class="item-price">650</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="tea_tonic" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Tea Tonic <span class="vol">400 ml</span></p><span class="item-price">450</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="coldbrew_cherry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Cherry-Rosemary Cold Brew <span class="vol">300 ml</span></p><span class="item-price">550</span></div></div></div>
     </section>
 
     <section id="other" class="category-section">
@@ -226,10 +207,10 @@
         <div class="item"><div class="item-photo"><img data-img="fresh_grapefruit" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Fresh Grapefruit Juice <span class="vol">300 ml</span></p><span class="item-price">590</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="water" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Sparkling / Still Water <span class="vol">530 ml</span></p><span class="item-price">490</span></div></div></div>
         
-        <div class="category-header" style="margin-top: 40px;">Additional Options</div>
+        <div class="category-header" style="margin-top: 40px;">Extra Options</div>
         <div style="display: grid; grid-template-columns: 1fr; gap: 10px; max-width: 300px;">
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Alternative milk</span><b>+90</b></div>
-            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Extra shot</span><b>+120</b></div>
+            <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Extra espresso shot</span><b>+120</b></div>
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Homemade salted caramel</span><b>+80</b></div>
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Syrup</span><b>+60</b></div>
             <div style="display:flex; justify-content:space-between; border-bottom:1px solid #eee; padding-bottom:5px;"><span>Honey / Lime</span><b>+60</b></div>
@@ -256,25 +237,25 @@
         <div class="item"><div class="item-photo"><img data-img="cocktail_espresso" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Espresso Martini</p><span class="item-price">990</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="cocktail_gummy" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Gummy <br><span class="vol">Pisco, Marmalade, Lollipops, Peach</span></p><span class="item-price">900</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="cocktail_froggy" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Froggy <br><span class="vol">Bamboo Tincture, Green Apples</span></p><span class="item-price">900</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="cocktail_peas" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Green Peas <br><span class="vol">Lime, Elderberry, Snap Peas</span></p><span class="item-price">900</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="cocktail_peas" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Green Peas <br><span class="vol">Lime, Elderberry, Snow Peas</span></p><span class="item-price">900</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="cocktail_bee" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Bee Smoker <br><span class="vol">Smoked Honey, Sake, Ginger, Scotch</span></p><span class="item-price">900</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="cocktail_blue" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Blue <br><span class="vol">Nut Vermouth, Orange Gin, Blue Cheese</span></p><span class="item-price">900</span></div></div></div>
     </section>
 
     <section id="na_cocktails" class="category-section">
-        <div class="category-header">Mocktails</div>
+        <div class="category-header">N/A Cocktails</div>
         <div class="item"><div class="item-photo"><img data-img="cocktail_wrong" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Wrong Bubbles <br><span class="vol">Aloe, Honey, Marmalade</span></p><span class="item-price">700</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="cocktail_basil" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Basil & Bubbles <br><span class="vol">Basil, Gin</span></p><span class="item-price">700</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="cocktail_basil" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Basil&Bubbles <br><span class="vol">Basil, Gin</span></p><span class="item-price">700</span></div></div></div>
         <div class="item"><div class="item-photo"><img data-img="cocktail_nany" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">N\A\N\Y <br><span class="vol">Peach, Oolong, Whiskey</span></p><span class="item-price">700</span></div></div></div>
     </section>
 
     <section id="beer" class="category-section">
         <div class="category-header">Beer & Cider</div>
-        <div class="item"><div class="item-photo"><img data-img="beer_corona" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Corona Extra, Light <span class="vol">0.33 l</span></p><span class="item-price">650</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="beer_bluemoon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Blue Moon, Light, unfiltered <span class="vol">0.33 l</span></p><span class="item-price">650</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="beer_tsingtao" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Tsingtao, Light <span class="vol">0.33 l</span></p><span class="item-price">590</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="cider_apple" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Backswood Apple Cider, Semi-Sweet <span class="vol">0.45 l</span></p><span class="item-price">590</span></div></div></div>
-        <div class="item"><div class="item-photo"><img data-img="cider_berry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Backswood Berry Cider, Semi-Sweet <span class="vol">0.45 l</span></p><span class="item-price">590</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="beer_corona" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Corona Extra, Light <span class="vol">0.33 L</span></p><span class="item-price">650</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="beer_bluemoon" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Blue Moon, Light, unfiltered <span class="vol">0.33 L</span></p><span class="item-price">650</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="beer_tsingtao" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Tsingtao, Light <span class="vol">0.33 L</span></p><span class="item-price">590</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="cider_apple" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Backswood Apple Cider, Semi-Sweet <span class="vol">0.45 L</span></p><span class="item-price">590</span></div></div></div>
+        <div class="item"><div class="item-photo"><img data-img="cider_berry" src=""></div><div class="item-info"><div class="item-title-row"><p class="item-name">Backswood Berry Cider, Semi-Sweet <span class="vol">0.45 L</span></p><span class="item-price">590</span></div></div></div>
     </section>
 </div>
 
@@ -285,7 +266,7 @@
 
 <footer>
     <p>*All milk drinks are prepared with lactose-free milk by default.</p>
-    <p>If you have any food allergies, please inform your waiter.</p>
+    <p>If you have any food allergies, please inform the waiter.</p>
     <p>murph.coffee</p>
 </footer>
 
