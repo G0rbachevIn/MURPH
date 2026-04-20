@@ -43,26 +43,34 @@ const kbzhuData = {
     "tartar": { k: 610, b: 29, z: 40, u: 35 },
 
     // СЛАДКОЕ
-    "bun": { k: 380, b: 8.5, z: 13, u: 58 }, // Булочка с корицей
-    "bun_poppy": { k: 340, b: 8, z: 8.5, u: 59 }, // Булочка с маком
+    "bun": { k: 380, b: 8.5, z: 13, u: 58 },
+    "bun_poppy": { k: 340, b: 8, z: 8.5, u: 59 },
     "shu": { k: 250, b: 6, z: 18, u: 16 },
     "creme_brulee": { k: 270, b: 3.5, z: 18, u: 25 },
     "napoleon": { k: 450, b: 11, z: 14, u: 69 },
     "ice_cream_salt": { k: 210, b: 2, z: 16, u: 14 },
     "cheesecake_matcha": { k: 310, b: 5, z: 17, u: 33 },
-    "cake_lemon": { k: 590, b: 15, z: 41, u: 39 }, // Миндальный кекс
+    "cake_lemon": { k: 590, b: 15, z: 41, u: 39 },
     "cake_carrot": { k: 610, b: 10, z: 34, u: 66 },
     "cheesecake_strawberry": { k: 370, b: 7, z: 24, u: 31 },
     "tiramisu": { k: 230, b: 6, z: 7, u: 35 },
     "french_toast": { k: 730, b: 12, z: 45, u: 71 },
     "apple_pie": { k: 490, b: 7.5, z: 23, u: 63 },
-    "crombolini": { k: 470, b: 7.5, z: 30, u: 42 }, // Новое
-    "ice_cream_blue": { k: 150, b: 2.5, z: 7.5, u: 17 }, // Новое (с плесенью)
-    "tartaletka_raspberry": { k: 440, b: 17, z: 19, u: 52 }, // Новое
-    "compliment": { k: 60, b: 0.5, z: 4, u: 5 } // Новое
+    "crombolini": { k: 470, b: 7.5, z: 30, u: 42 },
+    "ice_cream_blue": { k: 150, b: 2.5, z: 7.5, u: 17 },
+    "tartaletka_raspberry": { k: 440, b: 17, z: 19, u: 52 },
+    "compliment": { k: 60, b: 0.5, z: 4, u: 5 }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Проверяем язык страницы (ru или en)
+    const lang = document.documentElement.lang || 'ru';
+    
+    // Подстраиваем слова под нужный язык
+    const labels = lang === 'en' 
+        ? { kcal: 'kcal', p: 'P:', f: 'F:', c: 'C:' } 
+        : { kcal: 'ккал', p: 'Б:', f: 'Ж:', c: 'У:' };
+
     for (let id in kbzhuData) {
         const imgEl = document.querySelector(`[data-img="${id}"]`);
         
@@ -74,10 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
             kbzhuDiv.className = 'kbzhu-container';
             
             kbzhuDiv.innerHTML = `
-                <span class="kbzhu-badge">${kbzhu.k} ккал</span>
-                <span class="kbzhu-badge">Б: ${kbzhu.b}</span>
-                <span class="kbzhu-badge">Ж: ${kbzhu.z}</span>
-                <span class="kbzhu-badge">У: ${kbzhu.u}</span>
+                <span class="kbzhu-badge">${kbzhu.k} ${labels.kcal}</span>
+                <span class="kbzhu-badge">${labels.p} ${kbzhu.b}</span>
+                <span class="kbzhu-badge">${labels.f} ${kbzhu.z}</span>
+                <span class="kbzhu-badge">${labels.c} ${kbzhu.u}</span>
             `;
             
             infoContainer.appendChild(kbzhuDiv);
