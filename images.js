@@ -60,7 +60,6 @@ const menuImages = {
     "french_toast": "french_toast.jpg",     
     "apple_pie": "apple_pie.jpg",           
 
-
     // ==========================================
     // НАПИТКИ
     // ==========================================
@@ -76,7 +75,9 @@ const menuImages = {
     "raf": "raf.jpg",
     "ice_latte": "ice_latte.jpg",
     "espresso_tonic": "espresso_tonic.jpg",
+    "coldbrew": "coldbrew.jpg",
     "bumble": "bumble.jpg",
+    "barista_set": "barista_set.jpg",
 
     // --- Чай ---
     "tea_puer": "tea_puer.jpg",
@@ -87,27 +88,29 @@ const menuImages = {
     // --- Матча ---
     "matcha_latte": "matcha_latte.jpg",
     "ice_matcha_latte": "ice_matcha_latte.jpg",
-    "matcha_mint": "matcha_mint.jpg",
     "matcha_white_choc": "matcha_white_choc.jpg",
     "matcha_tonic": "matcha_tonic.jpg",
     "matcha_banana": "matcha_banana.jpg",
+    "ice_matcha_blueberry": "ice_matcha_blueberry.jpg",
+    "matcha_tonic_jasmine": "matcha_tonic_jasmine.jpg",
 
     // --- Special ---
+    "raf_caramel": "raf_caramel.jpg",
+    "latte_lemongrass": "latte_lemongrass.jpg",
     "latte_tiramisu": "latte_tiramisu.jpg",
     "bumble_pomegranate": "bumble_pomegranate.jpg",
+    "lemonade_classic": "lemonade_classic.jpg",
     "lemonade_strawberry": "lemonade_strawberry.jpg",
     "nitro_apricot": "nitro_apricot.jpg",
     "cacao_currant": "cacao_currant.jpg",
     "latte_cherry": "latte_cherry.jpg",
     "filter_berries": "filter_berries.jpg",
-    "raf_caramel": "raf_caramel.jpg",
 
     // --- Другое ---
     "cacao": "cacao.jpg",
     "fresh_orange": "fresh_orange.jpg",
     "fresh_grapefruit": "fresh_grapefruit.jpg",
     "water": "water.jpg",
-
 
     // ==========================================
     // АЛКОГОЛЬ
@@ -173,6 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function showPlaceholder(container) {
+    if (!container) return;
     container.style.display = "flex";
     container.style.alignItems = "center";
     container.style.justifyContent = "center";
