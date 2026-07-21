@@ -17,9 +17,9 @@ const menuImages = {
 
     // --- Салаты ---
     "green_salad": "green_salad.jpg",
-    "greek_salad": "greek_salad.jpg",
-    "latuk_salad": "latuk_salad.jpg",
-    "bowl": "bowl.jpg",
+    "salad_radish": "salad_radish.jpg",
+    "bowl_salmon": "bowl_salmon.jpg",
+    "bowl_chicken": "bowl_chicken.jpg",
 
     // --- Пицца ---
     "pepperoni": "pepperoni.jpg", 
@@ -29,6 +29,7 @@ const menuImages = {
     // --- Пасты / Горячее ---
     "chicken_grill": "chicken_grill.jpg",
     "nyokki": "nyokki.jpg",
+    "schnitzel": "schnitzel.jpg",
     "makkeroni": "makkeroni.jpg",
     "lasagna": "lasagna.jpg",
     "lingvini": "lingvini.jpg",
@@ -38,7 +39,7 @@ const menuImages = {
     // --- Супы ---
     "soup_tomato": "soup_tomato.jpg",
     "soup_chicken": "soup_chicken.jpg",
-    "soup_pumpkin": "soup_pumpkin.jpg", 
+    "soup_strawberry": "soup_strawberry.jpg", 
 
     // --- Закуски ---
     "bread_butter": "bread_butter.jpg", 
@@ -55,7 +56,7 @@ const menuImages = {
     "cheesecake_matcha": "matcha_cake.jpg", 
     "cake_lemon": "cake_lemon.jpg",         
     "cake_carrot": "cake_carrot.jpg",       
-    "cheesecake_strawberry": "cheesecake_strawberry.jpg",
+    "cheesecake_cherry": "cheesecake_cherry.jpg",
     "tiramisu": "tiramisu.jpg",
     "french_toast": "french_toast.jpg",     
     "apple_pie": "apple_pie.jpg",           
@@ -72,6 +73,7 @@ const menuImages = {
     "capuchino": "capuchino.jpg",
     "latte": "latte.jpg",
     "flat_white": "flat_white.jpg",
+    "dirty": "dirty.jpg",
     "raf": "raf.jpg",
     "ice_latte": "ice_latte.jpg",
     "espresso_tonic": "espresso_tonic.jpg",
@@ -95,6 +97,8 @@ const menuImages = {
     "matcha_tonic_jasmine": "matcha_tonic_jasmine.jpg",
 
     // --- Special ---
+    "affogato_espresso": "affogato_espresso.jpg",
+    "affogato_matcha": "affogato_matcha.jpg",
     "raf_caramel": "raf_caramel.jpg",
     "latte_lemongrass": "latte_lemongrass.jpg",
     "latte_tiramisu": "latte_tiramisu.jpg",
