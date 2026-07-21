@@ -11,11 +11,8 @@ const kbzhuData = {
     "tost_salmon": { k: 410, b: 22, z: 24, u: 26 },
     "beygl": { k: 680, b: 38, z: 44, u: 33 },
 
-    // САЛАТЫ
+    // САЛАТЫ (Для новых позиций значения удалены, чтобы не выводить нули. Как будут данные, просто допиши их сюда!)
     "green_salad": { k: 210, b: 5, z: 16, u: 11 },
-    "greek_salad": { k: 230, b: 6.5, z: 19, u: 8.5 },
-    "latuk_salad": { k: 520, b: 50, z: 28, u: 17 },
-    "bowl": { k: 400, b: 14, z: 28, u: 23 },
 
     // ПИЦЦА
     "pepperoni": { k: 740, b: 32, z: 16, u: 115 },
@@ -34,7 +31,6 @@ const kbzhuData = {
     // СУПЫ
     "soup_tomato": { k: 200, b: 15, z: 13, u: 7.5 },
     "soup_chicken": { k: 440, b: 57, z: 16, u: 18 },
-    "soup_pumpkin": { k: 240, b: 17, z: 14, u: 11 },
 
     // ЗАКУСКИ
     "bread_butter": { k: 520, b: 9.5, z: 34, u: 45 },
@@ -52,7 +48,7 @@ const kbzhuData = {
     "cheesecake_matcha": { k: 310, b: 5, z: 17, u: 33 },
     "cake_lemon": { k: 590, b: 15, z: 41, u: 39 },
     "cake_carrot": { k: 610, b: 10, z: 34, u: 66 },
-    "cheesecake_strawberry": { k: 370, b: 7, z: 24, u: 31 },
+    "cheesecake_cherry": { k: 370, b: 7, z: 24, u: 31 },
     "tiramisu": { k: 230, b: 6, z: 7, u: 35 },
     "french_toast": { k: 730, b: 12, z: 45, u: 71 },
     "apple_pie": { k: 490, b: 7.5, z: 23, u: 63 },
@@ -78,17 +74,20 @@ document.addEventListener("DOMContentLoaded", () => {
             const kbzhu = kbzhuData[id];
             const infoContainer = imgEl.closest('.item').querySelector('.item-info');
             
-            const kbzhuDiv = document.createElement('div');
-            kbzhuDiv.className = 'kbzhu-container';
-            
-            kbzhuDiv.innerHTML = `
-                <span class="kbzhu-badge">${kbzhu.k} ${labels.kcal}</span>
-                <span class="kbzhu-badge">${labels.p} ${kbzhu.b}</span>
-                <span class="kbzhu-badge">${labels.f} ${kbzhu.z}</span>
-                <span class="kbzhu-badge">${labels.c} ${kbzhu.u}</span>
-            `;
-            
-            infoContainer.appendChild(kbzhuDiv);
+            // Если КБЖУ есть, рендерим плашки
+            if (kbzhu) {
+                const kbzhuDiv = document.createElement('div');
+                kbzhuDiv.className = 'kbzhu-container';
+                
+                kbzhuDiv.innerHTML = `
+                    <span class="kbzhu-badge">${kbzhu.k} ${labels.kcal}</span>
+                    <span class="kbzhu-badge">${labels.p} ${kbzhu.b}</span>
+                    <span class="kbzhu-badge">${labels.f} ${kbzhu.z}</span>
+                    <span class="kbzhu-badge">${labels.c} ${kbzhu.u}</span>
+                `;
+                
+                infoContainer.appendChild(kbzhuDiv);
+            }
         }
     }
 });
