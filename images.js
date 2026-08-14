@@ -51,15 +51,16 @@ const menuImages = {
     "bun": "bun.jpg",                  
     "shu": "shu.jpg",
     "creme_brulee": "creme_brulee.jpg", 
-    "napoleon": "napoleon.jpg",         
+    "napoleon_crispy": "napoleon_crispy.jpg",         
     "ice_cream_salt": "ice_cream_salt.jpg",
     "cheesecake_matcha": "matcha_cake.jpg", 
-    "cake_lemon": "cake_lemon.jpg",         
-    "cake_carrot": "cake_carrot.jpg",       
+    "cake_poppy": "cake_poppy.jpg",
+    "panna_cotta": "panna_cotta.jpg",         
+    "cake_carrot": "cake_carrot.jpg",        
     "cheesecake_cherry": "cheesecake_cherry.jpg",
     "tiramisu": "tiramisu.jpg",
-    "french_toast": "french_toast.jpg",     
-    "apple_pie": "apple_pie.jpg",           
+    "french_toast": "french_toast.jpg",      
+    "apple_pie": "apple_pie.jpg",            
 
     // ==========================================
     // НАПИТКИ
@@ -160,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let id in menuImages) {
         const imgElements = document.querySelectorAll(`[data-img="${id}"]`);
-        
+
         imgElements.forEach(img => {
             const fileName = menuImages[id];
             const parent = img.parentElement;
@@ -168,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (fileName && fileName.trim() !== "") {
                 img.src = "images/" + fileName + cacheBuster;
                 img.style.display = "block";
-                
+
                 img.onclick = () => openPhoto(img.src);
 
                 img.onerror = () => {
