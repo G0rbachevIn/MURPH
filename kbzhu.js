@@ -48,10 +48,11 @@ const kbzhuData = {
     "bun_poppy": { k: 340, b: 8, z: 8.5, u: 59 },
     "shu": { k: 250, b: 6, z: 17, u: 17 },
     "creme_brulee": { k: 270, b: 3.5, z: 18, u: 25 },
-    "napoleon": { k: 440, b: 11, z: 14, u: 69 },
+    "napoleon_crispy": { k: 450, b: 6, z: 25, u: 50 },
     "ice_cream_salt": { k: 210, b: 2, z: 16, u: 14 },
     "cheesecake_matcha": { k: 310, b: 5, z: 17, u: 33 },
-    "cake_lemon": { k: 600, b: 16, z: 42, u: 39 },
+    "cake_poppy": { k: 420, b: 7, z: 22, u: 50 },
+    "panna_cotta": { k: 320, b: 5, z: 20, u: 30 },
     "cake_carrot": { k: 610, b: 10, z: 34, u: 66 },
     "cheesecake_cherry": { k: 560, b: 12, z: 34, u: 51 },
     "tiramisu": { k: 520, b: 12, z: 26, u: 58 },
@@ -66,7 +67,7 @@ const kbzhuData = {
 document.addEventListener("DOMContentLoaded", () => {
     // Проверяем язык страницы (ru или en)
     const lang = document.documentElement.lang || 'ru';
-    
+
     // Подстраиваем слова под нужный язык
     const labels = lang === 'en' 
         ? { kcal: 'kcal', p: 'P:', f: 'F:', c: 'C:' } 
@@ -74,23 +75,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let id in kbzhuData) {
         const imgEl = document.querySelector(`[data-img="${id}"]`);
-        
+
         if (imgEl) {
             const kbzhu = kbzhuData[id];
             const infoContainer = imgEl.closest('.item').querySelector('.item-info');
-            
+
             // Если КБЖУ есть, рендерим плашки
             if (kbzhu) {
                 const kbzhuDiv = document.createElement('div');
                 kbzhuDiv.className = 'kbzhu-container';
-                
+
                 kbzhuDiv.innerHTML = `
                     <span class="kbzhu-badge">${kbzhu.k} ${labels.kcal}</span>
                     <span class="kbzhu-badge">${labels.p} ${kbzhu.b}</span>
                     <span class="kbzhu-badge">${labels.f} ${kbzhu.z}</span>
                     <span class="kbzhu-badge">${labels.c} ${kbzhu.u}</span>
                 `;
-                
+
                 infoContainer.appendChild(kbzhuDiv);
             }
         }
